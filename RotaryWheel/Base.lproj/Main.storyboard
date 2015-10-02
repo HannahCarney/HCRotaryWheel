@@ -24,12 +24,13 @@
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="numberOfSections">
-                                        <integer key="value" value="4"/>
+                                        <integer key="value" value="8"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="image" keyPath="sectorImage" value="danphone"/>
                                     <userDefinedRuntimeAttribute type="color" keyPath="background">
                                         <color key="value" red="0.0" green="1" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
                                     </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="image" keyPath="rotaryImage" value="awesome-face"/>
                                 </userDefinedRuntimeAttributes>
                             </view>
                         </subviews>
@@ -46,6 +47,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="awesome-face" width="560" height="560"/>
         <image name="danphone" width="99" height="134"/>
     </resources>
 </document>

@@ -24,6 +24,7 @@ static float maxAlphavalue = 1.0;
 
 @synthesize numberOfSections = _numberOfSections;
 @synthesize sectorImage = _sectorImage;
+@synthesize rotaryImage = _rotaryImage;
 @synthesize startTransform;
 @synthesize sectors;
 @synthesize delegate, container;
@@ -52,7 +53,10 @@ static float maxAlphavalue = 1.0;
     _background = [UIColor redColor];
     self.layer.contentsScale = [UIScreen mainScreen].scale;
     self.numberOfSections = 6;
-    self.sectorImage = [UIImage imageNamed:@"danphone"
+    self.sectorImage.image = [UIImage imageNamed:@"danphone"
+                                  inBundle:[NSBundle bundleForClass:[self class]]
+             compatibleWithTraitCollection:nil];
+    self.rotaryImage = [UIImage imageNamed:@"danphone"
                                   inBundle:[NSBundle bundleForClass:[self class]]
              compatibleWithTraitCollection:nil];
 }
@@ -95,9 +99,8 @@ static float maxAlphavalue = 1.0;
         
         self.sectorImage = [[RotaryImageView alloc] initWithFrame: CGRectMake(offset, offset, iconSize, iconSize)];
         
-        self.sectorImage.image = [UIImage imageNamed:@"danphone"
-                                            inBundle:[NSBundle bundleForClass:[self class]]
-                       compatibleWithTraitCollection:nil];
+        self.sectorImage.image = self.rotaryImage;
+        
         self.sectorImage.transform = CGAffineTransformMakeRotation(-1 * (angleSize*i + .8));
         [im addSubview:self.sectorImage];
 

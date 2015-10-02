@@ -24,6 +24,7 @@ IB_DESIGNABLE
 @property (nonatomic, strong) IBInspectable UIColor* background;
 @property (nonatomic) IBInspectable int numberOfSections;
 @property (nonatomic) IBInspectable RotaryImageView *sectorImage;
+@property (nonatomic) IBInspectable UIImage *rotaryImage;
 @property (nonatomic, strong) UIView *container;
 @property (nonatomic, retain) NSTimer *timer;
 @property CGAffineTransform startTransform;

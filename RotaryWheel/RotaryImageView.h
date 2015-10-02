@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
+IBInspectable
+
 @interface RotaryImageView : UIImageView
 
 @property CGAffineTransform startTranform;
