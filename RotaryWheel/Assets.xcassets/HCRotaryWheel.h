@@ -21,7 +21,7 @@ IB_DESIGNABLE
 @interface HCRotaryWheelView : UIView<RotaryProtocol>
 
 @property (weak) id <RotaryProtocol> delegate;
-
+@property (nonatomic, strong) IBInspectable UIColor* background;
 @property (nonatomic) int numberOfSections;
 @property (nonatomic, strong) UIView *container;
 @property (nonatomic, retain) NSTimer *timer;

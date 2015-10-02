@@ -22,8 +22,8 @@ HCRotaryWheelView *wheel = nil;
 static float minAlphavalue = 0.6;
 static float maxAlphavalue = 1.0;
 
+//@synthesize background;
 @synthesize startTransform;
-@synthesize fillColor;
 @synthesize sectors;
 @synthesize delegate, container, numberOfSections;
 @synthesize currentSector;
@@ -48,29 +48,40 @@ static float maxAlphavalue = 1.0;
 
 -(void)initialSetup
 {
-    self.layer.contentsScale = [UIScreen mainScreen].scale;
-    self.numberOfSections = 6;
-//    self.numberOfSections = wheel.numberOfSections;
-    wheel = [[HCRotaryWheelView alloc] initWithFrame:self.bounds andDelegate:self withSections:self.numberOfSections];
-    wheel.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
-    wheel.backgroundColor = [UIColor greenColor];
-    self.backgroundColor = wheel.backgroundColor;
-    
-    [self addSubview:wheel];
+    _background = [UIColor redColor];
+//    self.layer.contentsScale = [UIScreen mainScreen].scale;
+//    self.numberOfSections = 6;
+////    self.numberOfSections = wheel.numberOfSections;
+//    wheel = [[HCRotaryWheelView alloc] initWithFrame:self.bounds andDelegate:self withSections:self.numberOfSections];
+//    wheel.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
+//    background = [UIColor redColor];
+//    [self addSubview:wheel];
 }
+
+//- (void)prepareForInterfaceBuilder
+//{
+//    _isInterfaceBuilder = YES;
+//    [self _render];
+//}
+
+//-(void)awakeFromNib
+//{
+//    wheel.backgroundColor = _background;
+//}
 
 - (void) wheelDidChangeValue:(int)currentSector {
     NSLog(@"changed value");
 }
-//-(void)drawRect:(CGRect)rect
-//{
-//    CGContextRef context = UIGraphicsGetCurrentContext();
-//    CGRect myFrame = CGRectMake(rect.origin.x, rect.origin.y, rect.size.width, rect.size.height);
-//    self.fillColor = wheel.fillColor;
-//    [self.fillColor set];
-//    UIRectFrame(myFrame);
-//    CGContextFillRect(context, myFrame);
-//}
+
+-(void)drawRect:(CGRect)rect
+{
+    CGContextRef context = UIGraphicsGetCurrentContext();
+    CGRect myFrame = CGRectMake(rect.origin.x, rect.origin.y, rect.size.width, rect.size.height);
+    wheel.background = _background;
+    [_background set];
+    UIRectFrame(myFrame);
+    CGContextFillRect(context, myFrame);
+}
 
 - (id) initWithFrame:(CGRect)frame andDelegate:(id)del withSections:(int)sectionsNumber {
     
