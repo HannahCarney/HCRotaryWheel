@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		974349C21BBEA7A3001CA551 /* PCCircularProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = 974349C11BBEA7A3001CA551 /* PCCircularProgressView.m */; settings = {ASSET_TAGS = (); }; };
 		97DA6A061BBD340900BBE6DA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 97DA6A051BBD340900BBE6DA /* main.m */; };
 		97DA6A091BBD340900BBE6DA /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 97DA6A081BBD340900BBE6DA /* AppDelegate.m */; };
 		97DA6A0C1BBD340900BBE6DA /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 97DA6A0B1BBD340900BBE6DA /* ViewController.m */; };
@@ -39,6 +40,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		974349C01BBEA799001CA551 /* PCCircularProgressView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PCCircularProgressView.h; sourceTree = "<group>"; };
+		974349C11BBEA7A3001CA551 /* PCCircularProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PCCircularProgressView.m; sourceTree = "<group>"; };
 		97DA6A011BBD340900BBE6DA /* RotaryWheel.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RotaryWheel.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		97DA6A051BBD340900BBE6DA /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		97DA6A071BBD340900BBE6DA /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -162,6 +165,8 @@
 				97DA6A3F1BBD34A900BBE6DA /* RotaryImageView.m */,
 				97DA6A451BBD394800BBE6DA /* HCRotaryWheel.h */,
 				97DA6A461BBD394800BBE6DA /* HCRotaryWheel.m */,
+				974349C01BBEA799001CA551 /* PCCircularProgressView.h */,
+				974349C11BBEA7A3001CA551 /* PCCircularProgressView.m */,
 				97DA6A481BBD61BB00BBE6DA /* RotaryWheelControl.h */,
 				97DA6A491BBD61BB00BBE6DA /* RotaryWheelControl.m */,
 			);
@@ -301,6 +306,7 @@
 				97DA6A0C1BBD340900BBE6DA /* ViewController.m in Sources */,
 				97DA6A091BBD340900BBE6DA /* AppDelegate.m in Sources */,
 				97DA6A4A1BBD61BB00BBE6DA /* RotaryWheelControl.m in Sources */,
+				974349C21BBEA7A3001CA551 /* PCCircularProgressView.m in Sources */,
 				97DA6A3A1BBD344C00BBE6DA /* RotarySector.m in Sources */,
 				97DA6A471BBD394800BBE6DA /* HCRotaryWheel.m in Sources */,
 				97DA6A061BBD340900BBE6DA /* main.m in Sources */,
@@ -530,6 +536,7 @@
 				97DA6A301BBD340900BBE6DA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		97DA6A311BBD340900BBE6DA /* Build configuration list for PBXNativeTarget "RotaryWheelTests" */ = {
 			isa = XCConfigurationList;
@@ -538,6 +545,7 @@
 				97DA6A331BBD340900BBE6DA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		97DA6A341BBD340900BBE6DA /* Build configuration list for PBXNativeTarget "RotaryWheelUITests" */ = {
 			isa = XCConfigurationList;
@@ -546,6 +554,7 @@
 				97DA6A361BBD340900BBE6DA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -49,19 +49,17 @@ static float maxAlphavalue = 1.0;
 -(void)initialSetup
 {
     _background = [UIColor redColor];
-//    self.layer.contentsScale = [UIScreen mainScreen].scale;
-//    self.numberOfSections = 6;
-////    self.numberOfSections = wheel.numberOfSections;
-//    wheel = [[HCRotaryWheelView alloc] initWithFrame:self.bounds andDelegate:self withSections:self.numberOfSections];
-//    wheel.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
-//    background = [UIColor redColor];
-//    [self addSubview:wheel];
+    self.layer.contentsScale = [UIScreen mainScreen].scale;
+    self.numberOfSections = 6;
+//    self.numberOfSections = wheel.numberOfSections;
+    wheel = [[HCRotaryWheelView alloc] initWithFrame:self.bounds andDelegate:self withSections:self.numberOfSections];
+    wheel.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
+    [self addSubview:wheel];
 }
 
 //- (void)prepareForInterfaceBuilder
 //{
-//    _isInterfaceBuilder = YES;
-//    [self _render];
+//    self.backgroundColor = _background;
 //}
 
 //-(void)awakeFromNib
