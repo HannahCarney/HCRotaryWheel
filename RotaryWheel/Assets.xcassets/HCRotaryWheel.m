@@ -23,9 +23,10 @@ static float minAlphavalue = 0.6;
 static float maxAlphavalue = 1.0;
 
 //@synthesize background;
+@synthesize numberOfSections = _numberOfSections;
 @synthesize startTransform;
 @synthesize sectors;
-@synthesize delegate, container, numberOfSections;
+@synthesize delegate, container;
 @synthesize currentSector;
 @synthesize timer;
 @synthesize timerDoesExist;
@@ -51,16 +52,17 @@ static float maxAlphavalue = 1.0;
     _background = [UIColor redColor];
     self.layer.contentsScale = [UIScreen mainScreen].scale;
     self.numberOfSections = 6;
-//    self.numberOfSections = wheel.numberOfSections;
-    wheel = [[HCRotaryWheelView alloc] initWithFrame:self.bounds andDelegate:self withSections:self.numberOfSections];
-    wheel.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
-    [self addSubview:wheel];
+//    [self getInterface];
+ 
+
 }
 
-//- (void)prepareForInterfaceBuilder
-//{
-//    self.backgroundColor = _background;
-//}
+-(void)getInterface
+{
+//    wheel = [[HCRotaryWheelView alloc] initWithFrame:self.bounds andDelegate:self];
+//    wheel.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
+//    [self addSubview:wheel];
+}
 
 //-(void)awakeFromNib
 //{
@@ -76,36 +78,23 @@ static float maxAlphavalue = 1.0;
     CGContextRef context = UIGraphicsGetCurrentContext();
     CGRect myFrame = CGRectMake(rect.origin.x, rect.origin.y, rect.size.width, rect.size.height);
     wheel.background = _background;
+
     [_background set];
-    UIRectFrame(myFrame);
-    CGContextFillRect(context, myFrame);
-}
 
-- (id) initWithFrame:(CGRect)frame andDelegate:(id)del withSections:(int)sectionsNumber {
-    
-    // 1 - Call super init
-    if ((self = [super initWithFrame:frame])) {
-        imageArray = [NSMutableArray array];
-        sectorArray = [NSMutableArray array];
-        // 2 - Set properties
-        self.numberOfSections = sectionsNumber;
-        self.delegate = del;
-        // 3 - Draw wheel
-        self.currentSector = 0;
-        [self drawWheel];
-        [self startTimer];
-    }
-    return self;
-}
-
-- (void) drawWheel {
-    // 1
-    container = [[UIView alloc] initWithFrame:self.frame];
+    imageArray = [NSMutableArray array];
+    sectorArray = [NSMutableArray array];
+    // 2 - Set properties
+        
+    self.delegate = self;
+    // 3 - Draw wheel
+    self.currentSector = 0;
+   
+    container = [[UIView alloc] initWithFrame:rect];
     //container.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
     // 2
-    CGFloat angleSize = 2*M_PI/numberOfSections;
+    CGFloat angleSize = 2*M_PI/self.numberOfSections;
     // 3
-    for (int i = 0; i < numberOfSections; i++) {
+    for (int i = 0; i < self.numberOfSections; i++) {
         // 4 - Create image view
         UIImageView *im = [[UIImageView alloc] init];
         im.layer.anchorPoint = CGPointMake(0.5f, 0.5f);
@@ -113,18 +102,18 @@ static float maxAlphavalue = 1.0;
                                         container.bounds.size.height/2.0-container.frame.origin.y);
         im.transform = CGAffineTransformMakeRotation(angleSize*i + .8);
         im.alpha = minAlphavalue;
-//        im.backgroundColor = [UIColor redColor];
+        //        im.backgroundColor = [UIColor redColor];
         im.tag = i;
         if (i == 0) {
             im.alpha = maxAlphavalue;
         }
         // 5 - Set sector image
-        float offset = self.frame.size.height/9;
+        float offset = rect.size.height/9;
         float iconSize = 2.2 * offset;
         
         RotaryImageView *si = [[RotaryImageView alloc] initWithFrame: CGRectMake(offset, offset, iconSize, iconSize)];
         
-        si.image = [UIImage imageNamed:[NSString stringWithFormat:@"icon%i.png", i]];
+        si.image = [UIImage imageNamed:[NSString stringWithFormat:@"danphone"]];
         si.transform = CGAffineTransformMakeRotation(-1 * (angleSize*i + .8));
         [im addSubview:si];
         [imageArray addObject:si];
@@ -144,17 +133,26 @@ static float maxAlphavalue = 1.0;
     container.userInteractionEnabled = NO;
     
     // 8 - Initialize sectors
-    sectors = [NSMutableArray arrayWithCapacity:numberOfSections];
-    if (numberOfSections % 2 == 0) {
+    sectors = [NSMutableArray arrayWithCapacity:self.numberOfSections];
+
+    if (self.numberOfSections % 2 == 0) {
         [self buildSectorsEven];
     } else {
-        //        [self buildSectorsOdd];
+        [self buildSectorsOdd];
     }
+
     // 9 - Call protocol method
     [self addSubview:container];
     RotaryWheelControl *rotaryControl = [[RotaryWheelControl alloc] initWithFrame:self.bounds];
     [self addSubview:rotaryControl];
     [rotaryControl setUpControlWithSelf:self andImageArray:imageArray];
+
+    
+    [self startTimer];
+    
+    UIRectFrame(myFrame);
+    CGContextFillRect(context, myFrame);
+
 }
 
 -(void)startTimer
@@ -229,14 +227,26 @@ static float maxAlphavalue = 1.0;
 - (void) rotate {
     [UIView animateWithDuration:0.6 delay:0 options:UIViewAnimationOptionCurveEaseInOut animations:^{
         UIImageView *im = [self getSectorByValue:currentSector];
-        im.alpha = minAlphavalue;
-        CGAffineTransform t = CGAffineTransformRotate(container.transform, 1.046 );
-        container.transform = t;
-        for (RotaryImageView *view in imageArray)
+        float valueForRotate;
+        for (RotarySector *s in sectors)
         {
-            view.transform = CGAffineTransformRotate(view.transform, -1.046);
+            if (s.sector == 1)
+            {
+            valueForRotate = s.midValue;
+            CGAffineTransform t = CGAffineTransformRotate(container.transform, -1 * valueForRotate);
+            container.transform = t;
+            for (RotaryImageView *view in imageArray)
+            {
+                view.transform = CGAffineTransformRotate(view.transform, valueForRotate);
+            }
+             im.alpha = minAlphavalue;
+             [self getPlacement];
         }
-        [self getPlacement];
+       
+            // 4 - Check for anomaly (occurs with even number of sectors)
+        }
+
+        
     } completion:nil];
     
     //hardcoded value for the amount of radians necessary to rotate one segment given there are 6 segment
@@ -254,11 +264,11 @@ static float maxAlphavalue = 1.0;
 
 - (void) buildSectorsEven {
     // 1 - Define sector length
-    CGFloat fanWidth = M_PI*2/numberOfSections;
+    CGFloat fanWidth = M_PI*2/self.numberOfSections;
     // 2 - Set initial midpoint
     CGFloat mid = 0;
     // 3 - Iterate through all sectors
-    for (int i = 0; i < numberOfSections; i++) {
+    for (int i = 0; i < self.numberOfSections; i++) {
         RotarySector *sector = [[RotarySector alloc] init];
         // 4 - Set sector values
         sector.midValue = mid;
@@ -286,5 +296,30 @@ static float maxAlphavalue = 1.0;
     }
     return res;
 }
+
+- (void) buildSectorsOdd {
+    // 1 - Define sector length
+    CGFloat fanWidth = M_PI*2/self.numberOfSections;
+    // 2 - Set initial midpoint
+    CGFloat mid = 0;
+    // 3 - Iterate through all sectors
+    for (int i = 0; i < self.numberOfSections; i++) {
+        RotarySector *sector = [[RotarySector alloc] init];
+        // 4 - Set sector values
+        sector.midValue = mid;
+        sector.minValue = mid - (fanWidth/2);
+        sector.maxValue = mid + (fanWidth/2);
+        sector.sector = i;
+        mid -= fanWidth;
+        if (sector.minValue < - M_PI) {
+            mid = -mid;
+            mid -= fanWidth;
+        }
+        // 5 - Add sector to array
+        [sectors addObject:sector];
+        NSLog(@"cl is %@", sector);
+    }
+}
+
 
 @end

@@ -22,15 +22,13 @@ IB_DESIGNABLE
 
 @property (weak) id <RotaryProtocol> delegate;
 @property (nonatomic, strong) IBInspectable UIColor* background;
-@property (nonatomic) int numberOfSections;
+@property (nonatomic) IBInspectable int numberOfSections;
 @property (nonatomic, strong) UIView *container;
 @property (nonatomic, retain) NSTimer *timer;
 @property CGAffineTransform startTransform;
 @property (nonatomic, strong) NSMutableArray *sectors;
 @property int currentSector;
 @property (nonatomic) BOOL timerDoesExist;
-
-- (id) initWithFrame:(CGRect)frame andDelegate:(id)del withSections:(int)sectionsNumber;
 
 -(void)rotate;
 -(void)getPlacement;
