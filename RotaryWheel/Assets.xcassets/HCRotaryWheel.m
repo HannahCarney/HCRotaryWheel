@@ -22,8 +22,8 @@ HCRotaryWheelView *wheel = nil;
 static float minAlphavalue = 0.6;
 static float maxAlphavalue = 1.0;
 
-//@synthesize background;
 @synthesize numberOfSections = _numberOfSections;
+@synthesize sectorImage = _sectorImage;
 @synthesize startTransform;
 @synthesize sectors;
 @synthesize delegate, container;
@@ -52,25 +52,9 @@ static float maxAlphavalue = 1.0;
     _background = [UIColor redColor];
     self.layer.contentsScale = [UIScreen mainScreen].scale;
     self.numberOfSections = 6;
-//    [self getInterface];
- 
-
-}
-
--(void)getInterface
-{
-//    wheel = [[HCRotaryWheelView alloc] initWithFrame:self.bounds andDelegate:self];
-//    wheel.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
-//    [self addSubview:wheel];
-}
-
-//-(void)awakeFromNib
-//{
-//    wheel.backgroundColor = _background;
-//}
-
-- (void) wheelDidChangeValue:(int)currentSector {
-    NSLog(@"changed value");
+    self.sectorImage = [UIImage imageNamed:@"danphone"
+                                  inBundle:[NSBundle bundleForClass:[self class]]
+             compatibleWithTraitCollection:nil];
 }
 
 -(void)drawRect:(CGRect)rect
@@ -78,7 +62,7 @@ static float maxAlphavalue = 1.0;
     CGContextRef context = UIGraphicsGetCurrentContext();
     CGRect myFrame = CGRectMake(rect.origin.x, rect.origin.y, rect.size.width, rect.size.height);
     wheel.background = _background;
-
+  
     [_background set];
 
     imageArray = [NSMutableArray array];
@@ -90,7 +74,6 @@ static float maxAlphavalue = 1.0;
     self.currentSector = 0;
    
     container = [[UIView alloc] initWithFrame:rect];
-    //container.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
     // 2
     CGFloat angleSize = 2*M_PI/self.numberOfSections;
     // 3
@@ -102,7 +85,6 @@ static float maxAlphavalue = 1.0;
                                         container.bounds.size.height/2.0-container.frame.origin.y);
         im.transform = CGAffineTransformMakeRotation(angleSize*i + .8);
         im.alpha = minAlphavalue;
-        //        im.backgroundColor = [UIColor redColor];
         im.tag = i;
         if (i == 0) {
             im.alpha = maxAlphavalue;
@@ -111,19 +93,23 @@ static float maxAlphavalue = 1.0;
         float offset = rect.size.height/9;
         float iconSize = 2.2 * offset;
         
-        RotaryImageView *si = [[RotaryImageView alloc] initWithFrame: CGRectMake(offset, offset, iconSize, iconSize)];
+        self.sectorImage = [[RotaryImageView alloc] initWithFrame: CGRectMake(offset, offset, iconSize, iconSize)];
         
-        si.image = [UIImage imageNamed:[NSString stringWithFormat:@"danphone"]];
-        si.transform = CGAffineTransformMakeRotation(-1 * (angleSize*i + .8));
-        [im addSubview:si];
-        [imageArray addObject:si];
-        si.tag = i;
+        self.sectorImage.image = [UIImage imageNamed:@"danphone"
+                                            inBundle:[NSBundle bundleForClass:[self class]]
+                       compatibleWithTraitCollection:nil];
+        self.sectorImage.transform = CGAffineTransformMakeRotation(-1 * (angleSize*i + .8));
+        [im addSubview:self.sectorImage];
+
+    
+        [imageArray addObject:self.sectorImage];
+        self.sectorImage.tag = i;
         [sectorArray addObject:im];
         
         self.userInteractionEnabled = YES;
         
         im.userInteractionEnabled = YES;
-        si.userInteractionEnabled = YES;
+        self.sectorImage.userInteractionEnabled = YES;
         
         // 6 - Add image view to container
         [container addSubview:im];
@@ -152,7 +138,7 @@ static float maxAlphavalue = 1.0;
     
     UIRectFrame(myFrame);
     CGContextFillRect(context, myFrame);
-
+    UIGraphicsEndImageContext();
 }
 
 -(void)startTimer
@@ -200,8 +186,6 @@ static float maxAlphavalue = 1.0;
             
             currentSector = s.sector;
         }
-        // 8 - Call protocol method
-        [self.delegate wheelDidChangeValue:currentSector];
     }
     // 7 - Set up animation for final rotation
     [UIView beginAnimations:nil context:NULL];
@@ -242,14 +226,10 @@ static float maxAlphavalue = 1.0;
              im.alpha = minAlphavalue;
              [self getPlacement];
         }
-       
-            // 4 - Check for anomaly (occurs with even number of sectors)
-        }
+    }
 
         
     } completion:nil];
-    
-    //hardcoded value for the amount of radians necessary to rotate one segment given there are 6 segment
     
 }
 

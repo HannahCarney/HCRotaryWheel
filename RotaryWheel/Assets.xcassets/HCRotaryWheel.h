@@ -8,13 +8,13 @@
 
 #import <UIKit/UIKit.h>
 #import <Foundation/Foundation.h>
+#import "RotaryImageView.h"
 
 
 IB_DESIGNABLE
 
 @protocol RotaryProtocol <NSObject>
 
-- (void) wheelDidChangeValue:(int)currentSector;
 
 @end
 
@@ -23,6 +23,7 @@ IB_DESIGNABLE
 @property (weak) id <RotaryProtocol> delegate;
 @property (nonatomic, strong) IBInspectable UIColor* background;
 @property (nonatomic) IBInspectable int numberOfSections;
+@property (nonatomic) IBInspectable RotaryImageView *sectorImage;
 @property (nonatomic, strong) UIView *container;
 @property (nonatomic, retain) NSTimer *timer;
 @property CGAffineTransform startTransform;
