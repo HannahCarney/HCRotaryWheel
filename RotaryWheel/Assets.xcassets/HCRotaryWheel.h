@@ -14,8 +14,6 @@
 IB_DESIGNABLE
 
 @protocol RotaryProtocol <NSObject>
-
-
 @end
 
 @interface HCRotaryWheelView : UIView<RotaryProtocol>
