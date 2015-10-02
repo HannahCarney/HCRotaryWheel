@@ -23,8 +23,11 @@ static float minAlphavalue = 0.6;
 static float maxAlphavalue = 1.0;
 
 @synthesize numberOfSections = _numberOfSections;
-@synthesize sectorImage = _sectorImage;
-@synthesize rotaryImage = _rotaryImage;
+@synthesize sectorView = _sectorView;
+@synthesize rotaryImage1 = _rotaryImage1;
+@synthesize rotaryImage2 = _rotaryImage2;
+@synthesize rotaryImage3 = _rotaryImage3;
+
 @synthesize startTransform;
 @synthesize sectors;
 @synthesize delegate, container;
@@ -53,12 +56,27 @@ static float maxAlphavalue = 1.0;
     _background = [UIColor redColor];
     self.layer.contentsScale = [UIScreen mainScreen].scale;
     self.numberOfSections = 6;
-    self.sectorImage.image = [UIImage imageNamed:@"danphone"
+    self.sectorView.image = [UIImage imageNamed:@"danphone"
                                   inBundle:[NSBundle bundleForClass:[self class]]
              compatibleWithTraitCollection:nil];
-    self.rotaryImage = [UIImage imageNamed:@"danphone"
+    self.rotaryImage1 = [UIImage imageNamed:@"danphone"
                                   inBundle:[NSBundle bundleForClass:[self class]]
              compatibleWithTraitCollection:nil];
+    self.rotaryImage2 = [UIImage imageNamed:@"danphone"
+                                   inBundle:[NSBundle bundleForClass:[self class]]
+              compatibleWithTraitCollection:nil];
+    self.rotaryImage3 = [UIImage imageNamed:@"danphone"
+                                   inBundle:[NSBundle bundleForClass:[self class]]
+              compatibleWithTraitCollection:nil];
+    self.rotaryImage4 = [UIImage imageNamed:@"danphone"
+                                    inBundle:[NSBundle bundleForClass:[self class]]
+               compatibleWithTraitCollection:nil];
+    self.rotaryImage5 = [UIImage imageNamed:@"danphone"
+                                   inBundle:[NSBundle bundleForClass:[self class]]
+              compatibleWithTraitCollection:nil];
+    self.rotaryImage6 = [UIImage imageNamed:@"danphone"
+                                   inBundle:[NSBundle bundleForClass:[self class]]
+              compatibleWithTraitCollection:nil];
 }
 
 -(void)drawRect:(CGRect)rect
@@ -96,23 +114,50 @@ static float maxAlphavalue = 1.0;
         // 5 - Set sector image
         float offset = rect.size.height/9;
         float iconSize = 2.2 * offset;
+     
+        self.sectorView = [[RotaryImageView alloc] initWithFrame: CGRectMake(offset, offset, iconSize, iconSize)];
+    
         
-        self.sectorImage = [[RotaryImageView alloc] initWithFrame: CGRectMake(offset, offset, iconSize, iconSize)];
-        
-        self.sectorImage.image = self.rotaryImage;
-        
-        self.sectorImage.transform = CGAffineTransformMakeRotation(-1 * (angleSize*i + .8));
-        [im addSubview:self.sectorImage];
+        self.sectorView.transform = CGAffineTransformMakeRotation(-1 * (angleSize*i + .8));
+        [im addSubview:self.sectorView];
 
     
-        [imageArray addObject:self.sectorImage];
-        self.sectorImage.tag = i;
+        [imageArray addObject:self.sectorView];
+        self.sectorView.tag = i;
+        if (self.sectorView.tag == 0)
+        {
+            self.sectorView.image = self.rotaryImage1;
+        }
+        if (self.sectorView.tag == 1)
+        {
+            self.sectorView.image = self.rotaryImage2;
+        }
+        if (self.sectorView.tag == 2)
+        {
+            self.sectorView.image = self.rotaryImage3;
+        }
+        if (self.sectorView.tag == 3)
+        {
+            self.sectorView.image = self.rotaryImage4;
+        }
+        if (self.sectorView.tag == 4)
+        {
+            self.sectorView.image = self.rotaryImage5;
+        }
+        if (self.sectorView.tag == 5)
+        {
+            self.sectorView.image = self.rotaryImage6;
+        }
+//        else
+//        {
+//            self.sectorView.image = self.rotaryImage1;
+//        }
         [sectorArray addObject:im];
         
         self.userInteractionEnabled = YES;
         
         im.userInteractionEnabled = YES;
-        self.sectorImage.userInteractionEnabled = YES;
+        self.sectorView.userInteractionEnabled = YES;
         
         // 6 - Add image view to container
         [container addSubview:im];

@@ -23,8 +23,14 @@ IB_DESIGNABLE
 @property (weak) id <RotaryProtocol> delegate;
 @property (nonatomic, strong) IBInspectable UIColor* background;
 @property (nonatomic) IBInspectable int numberOfSections;
-@property (nonatomic) IBInspectable RotaryImageView *sectorImage;
-@property (nonatomic) IBInspectable UIImage *rotaryImage;
+@property (nonatomic) IBInspectable RotaryImageView *sectorView;
+
+@property (nonatomic) IBInspectable UIImage *rotaryImage1;
+@property (nonatomic) IBInspectable UIImage *rotaryImage2;
+@property (nonatomic) IBInspectable UIImage *rotaryImage3;
+@property (nonatomic) IBInspectable UIImage *rotaryImage4;
+@property (nonatomic) IBInspectable UIImage *rotaryImage5;
+@property (nonatomic) IBInspectable UIImage *rotaryImage6;
 @property (nonatomic, strong) UIView *container;
 @property (nonatomic, retain) NSTimer *timer;
 @property CGAffineTransform startTransform;
