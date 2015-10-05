@@ -16,7 +16,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bSG-uF-tro" customClass="HCRotaryWheelView">
+                            <view contentMode="scaleAspectFill" translatesAutoresizingMaskIntoConstraints="NO" id="bSG-uF-tro" customClass="HCRotaryWheelView">
                                 <rect key="frame" x="133" y="94" width="335" height="364"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="335" id="86J-p8-Qzu"/>
@@ -29,11 +29,12 @@
                                     <userDefinedRuntimeAttribute type="color" keyPath="background">
                                         <color key="value" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="image" keyPath="rotaryImage2" value="awesome-face"/>
-                                    <userDefinedRuntimeAttribute type="image" keyPath="rotaryImage3" value="_BfANSTo_400x400"/>
-                                    <userDefinedRuntimeAttribute type="image" keyPath="rotaryImage6" value="_BfANSTo_400x400"/>
-                                    <userDefinedRuntimeAttribute type="image" keyPath="rotaryImage4" value="awesome-face"/>
-                                    <userDefinedRuntimeAttribute type="image" keyPath="rotaryImage5" value="_BfANSTo_400x400"/>
+                                    <userDefinedRuntimeAttribute type="image" keyPath="rotaryImage2" value="monkey"/>
+                                    <userDefinedRuntimeAttribute type="image" keyPath="rotaryImage3" value="dog"/>
+                                    <userDefinedRuntimeAttribute type="image" keyPath="rotaryImage6" value="alien"/>
+                                    <userDefinedRuntimeAttribute type="image" keyPath="rotaryImage4" value="Ghost"/>
+                                    <userDefinedRuntimeAttribute type="image" keyPath="rotaryImage5" value="peace"/>
+                                    <userDefinedRuntimeAttribute type="image" keyPath="rotaryImage1" value="bear"/>
                                 </userDefinedRuntimeAttributes>
                             </view>
                         </subviews>
@@ -50,7 +51,11 @@
         </scene>
     </scenes>
     <resources>
-        <image name="_BfANSTo_400x400" width="400" height="400"/>
-        <image name="awesome-face" width="560" height="560"/>
+        <image name="Ghost" width="269" height="247"/>
+        <image name="alien" width="220" height="230"/>
+        <image name="bear" width="220" height="230"/>
+        <image name="dog" width="360" height="360"/>
+        <image name="monkey" width="620" height="648"/>
+        <image name="peace" width="160" height="160"/>
     </resources>
 </document>
