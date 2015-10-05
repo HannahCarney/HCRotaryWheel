@@ -55,11 +55,11 @@ static float maxAlphavalue = 1.0;
     self.layer.contentsScale = [UIScreen mainScreen].scale;
     self.numberOfSections = 6;
     self.sectorView.image = [UIImage imageNamed:@"danphone"
-                                  inBundle:[NSBundle bundleForClass:[self class]]
-             compatibleWithTraitCollection:nil];
+                                       inBundle:[NSBundle bundleForClass:[self class]]
+                  compatibleWithTraitCollection:nil];
     self.rotaryImage1 = [UIImage imageNamed:@"danphone"
-                                  inBundle:[NSBundle bundleForClass:[self class]]
-             compatibleWithTraitCollection:nil];
+                                   inBundle:[NSBundle bundleForClass:[self class]]
+              compatibleWithTraitCollection:nil];
     self.rotaryImage2 = [UIImage imageNamed:@"danphone"
                                    inBundle:[NSBundle bundleForClass:[self class]]
               compatibleWithTraitCollection:nil];
@@ -67,8 +67,8 @@ static float maxAlphavalue = 1.0;
                                    inBundle:[NSBundle bundleForClass:[self class]]
               compatibleWithTraitCollection:nil];
     self.rotaryImage4 = [UIImage imageNamed:@"danphone"
-                                    inBundle:[NSBundle bundleForClass:[self class]]
-               compatibleWithTraitCollection:nil];
+                                   inBundle:[NSBundle bundleForClass:[self class]]
+              compatibleWithTraitCollection:nil];
     self.rotaryImage5 = [UIImage imageNamed:@"danphone"
                                    inBundle:[NSBundle bundleForClass:[self class]]
               compatibleWithTraitCollection:nil];
@@ -83,17 +83,17 @@ static float maxAlphavalue = 1.0;
     CGContextRef context = UIGraphicsGetCurrentContext();
     CGRect myFrame = CGRectMake(rect.origin.x, rect.origin.y, rect.size.width, rect.size.height);
     wheel.background = _background;
-  
+    
     [_background set];
-
+    
     imageArray = [NSMutableArray array];
     sectorArray = [NSMutableArray array];
     // 2 - Set properties
-        
+    
     self.delegate = self;
     // 3 - Draw wheel
     self.currentSector = 0;
-   
+    
     container = [[UIView alloc] initWithFrame:rect];
     // 2
     CGFloat angleSize = 2*M_PI/self.numberOfSections;
@@ -113,14 +113,14 @@ static float maxAlphavalue = 1.0;
         // 5 - Set sector image
         float offset = rect.size.height/9;
         float iconSize = 2.2 * offset;
-     
+        
         self.sectorView = [[RotaryImageView alloc] initWithFrame: CGRectMake(offset, offset, iconSize, iconSize)];
-    
+        
         
         self.sectorView.transform = CGAffineTransformMakeRotation(-1 * (angleSize*i + .8));
         [im addSubview:self.sectorView];
-
-    
+        
+        
         [imageArray addObject:self.sectorView];
         self.sectorView.tag = i;
         if (self.sectorView.tag == 0)
@@ -162,7 +162,7 @@ static float maxAlphavalue = 1.0;
     
     // Initialize sectors
     sectors = [NSMutableArray arrayWithCapacity:self.numberOfSections];
-
+    
     if (self.numberOfSections % 2 == 0) {
         [self buildSectorsEven];
     } else {
@@ -253,15 +253,15 @@ static float maxAlphavalue = 1.0;
         {
             if (s.sector == 1)
             {
-            valueForRotate = s.midValue;
-            CGAffineTransform t = CGAffineTransformRotate(container.transform, -1 * valueForRotate);
-            container.transform = t;
-            for (RotaryImageView *view in imageArray)
-            {
-                view.transform = CGAffineTransformRotate(view.transform, valueForRotate);
-            }
-             im.alpha = minAlphavalue;
-             [self getPlacement];
+                valueForRotate = s.midValue;
+                CGAffineTransform t = CGAffineTransformRotate(container.transform, -1 * valueForRotate);
+                container.transform = t;
+                for (RotaryImageView *view in imageArray)
+                {
+                    view.transform = CGAffineTransformRotate(view.transform, valueForRotate);
+                }
+                im.alpha = minAlphavalue;
+                [self getPlacement];
             }
         }
     } completion:nil];
