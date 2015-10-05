@@ -163,12 +163,12 @@
 				97DA6A391BBD344C00BBE6DA /* RotarySector.m */,
 				97DA6A3E1BBD34A900BBE6DA /* RotaryImageView.h */,
 				97DA6A3F1BBD34A900BBE6DA /* RotaryImageView.m */,
-				97DA6A451BBD394800BBE6DA /* HCRotaryWheel.h */,
-				97DA6A461BBD394800BBE6DA /* HCRotaryWheel.m */,
 				974349C01BBEA799001CA551 /* PCCircularProgressView.h */,
 				974349C11BBEA7A3001CA551 /* PCCircularProgressView.m */,
 				97DA6A481BBD61BB00BBE6DA /* RotaryWheelControl.h */,
 				97DA6A491BBD61BB00BBE6DA /* RotaryWheelControl.m */,
+				97DA6A451BBD394800BBE6DA /* HCRotaryWheel.h */,
+				97DA6A461BBD394800BBE6DA /* HCRotaryWheel.m */,
 			);
 			name = Controls;
 			sourceTree = "<group>";

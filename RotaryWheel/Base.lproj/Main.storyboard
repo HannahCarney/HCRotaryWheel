@@ -24,7 +24,7 @@
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="numberOfSections">
-                                        <integer key="value" value="5"/>
+                                        <integer key="value" value="6"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="color" keyPath="background">
                                         <color key="value" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -32,6 +32,8 @@
                                     <userDefinedRuntimeAttribute type="image" keyPath="rotaryImage2" value="awesome-face"/>
                                     <userDefinedRuntimeAttribute type="image" keyPath="rotaryImage3" value="_BfANSTo_400x400"/>
                                     <userDefinedRuntimeAttribute type="image" keyPath="rotaryImage6" value="_BfANSTo_400x400"/>
+                                    <userDefinedRuntimeAttribute type="image" keyPath="rotaryImage4" value="awesome-face"/>
+                                    <userDefinedRuntimeAttribute type="image" keyPath="rotaryImage5" value="_BfANSTo_400x400"/>
                                 </userDefinedRuntimeAttributes>
                             </view>
                         </subviews>

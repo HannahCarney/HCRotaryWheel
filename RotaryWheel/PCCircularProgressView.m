@@ -10,7 +10,6 @@
 
 @implementation PCCircularProgressView
 {
-
     UIView* bgView;
 }
 
