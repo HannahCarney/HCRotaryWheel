@@ -11,7 +11,6 @@
 
 @interface RotaryWheelControl : UIControl
 
-@property (weak) id <RotaryProtocol> delegate;
 @property CGAffineTransform startTransform;
 @property (nonatomic, strong) NSMutableArray *sectors;
 

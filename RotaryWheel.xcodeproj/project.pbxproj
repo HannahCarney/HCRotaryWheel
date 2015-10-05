@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		974349C21BBEA7A3001CA551 /* PCCircularProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = 974349C11BBEA7A3001CA551 /* PCCircularProgressView.m */; settings = {ASSET_TAGS = (); }; };
 		97DA6A061BBD340900BBE6DA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 97DA6A051BBD340900BBE6DA /* main.m */; };
 		97DA6A091BBD340900BBE6DA /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 97DA6A081BBD340900BBE6DA /* AppDelegate.m */; };
 		97DA6A0C1BBD340900BBE6DA /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 97DA6A0B1BBD340900BBE6DA /* ViewController.m */; };
@@ -18,8 +17,8 @@
 		97DA6A2A1BBD340900BBE6DA /* RotaryWheelUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 97DA6A291BBD340900BBE6DA /* RotaryWheelUITests.m */; };
 		97DA6A3A1BBD344C00BBE6DA /* RotarySector.m in Sources */ = {isa = PBXBuildFile; fileRef = 97DA6A391BBD344C00BBE6DA /* RotarySector.m */; settings = {ASSET_TAGS = (); }; };
 		97DA6A401BBD34A900BBE6DA /* RotaryImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 97DA6A3F1BBD34A900BBE6DA /* RotaryImageView.m */; settings = {ASSET_TAGS = (); }; };
-		97DA6A471BBD394800BBE6DA /* HCRotaryWheel.m in Sources */ = {isa = PBXBuildFile; fileRef = 97DA6A461BBD394800BBE6DA /* HCRotaryWheel.m */; settings = {ASSET_TAGS = (); }; };
 		97DA6A4A1BBD61BB00BBE6DA /* RotaryWheelControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 97DA6A491BBD61BB00BBE6DA /* RotaryWheelControl.m */; settings = {ASSET_TAGS = (); }; };
+		97DB73EF1BC2781C005FA345 /* HCRotaryWheel.m in Sources */ = {isa = PBXBuildFile; fileRef = 97DB73EE1BC2781C005FA345 /* HCRotaryWheel.m */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,8 +39,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		974349C01BBEA799001CA551 /* PCCircularProgressView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PCCircularProgressView.h; sourceTree = "<group>"; };
-		974349C11BBEA7A3001CA551 /* PCCircularProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PCCircularProgressView.m; sourceTree = "<group>"; };
 		97DA6A011BBD340900BBE6DA /* RotaryWheel.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RotaryWheel.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		97DA6A051BBD340900BBE6DA /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		97DA6A071BBD340900BBE6DA /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -62,10 +59,10 @@
 		97DA6A391BBD344C00BBE6DA /* RotarySector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RotarySector.m; sourceTree = "<group>"; };
 		97DA6A3E1BBD34A900BBE6DA /* RotaryImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RotaryImageView.h; sourceTree = "<group>"; };
 		97DA6A3F1BBD34A900BBE6DA /* RotaryImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RotaryImageView.m; sourceTree = "<group>"; };
-		97DA6A451BBD394800BBE6DA /* HCRotaryWheel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HCRotaryWheel.h; path = Assets.xcassets/HCRotaryWheel.h; sourceTree = "<group>"; };
-		97DA6A461BBD394800BBE6DA /* HCRotaryWheel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HCRotaryWheel.m; path = Assets.xcassets/HCRotaryWheel.m; sourceTree = "<group>"; };
 		97DA6A481BBD61BB00BBE6DA /* RotaryWheelControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RotaryWheelControl.h; sourceTree = "<group>"; };
 		97DA6A491BBD61BB00BBE6DA /* RotaryWheelControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RotaryWheelControl.m; sourceTree = "<group>"; };
+		97DB73ED1BC2781C005FA345 /* HCRotaryWheel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HCRotaryWheel.h; sourceTree = "<group>"; };
+		97DB73EE1BC2781C005FA345 /* HCRotaryWheel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HCRotaryWheel.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -163,12 +160,10 @@
 				97DA6A391BBD344C00BBE6DA /* RotarySector.m */,
 				97DA6A3E1BBD34A900BBE6DA /* RotaryImageView.h */,
 				97DA6A3F1BBD34A900BBE6DA /* RotaryImageView.m */,
-				974349C01BBEA799001CA551 /* PCCircularProgressView.h */,
-				974349C11BBEA7A3001CA551 /* PCCircularProgressView.m */,
 				97DA6A481BBD61BB00BBE6DA /* RotaryWheelControl.h */,
 				97DA6A491BBD61BB00BBE6DA /* RotaryWheelControl.m */,
-				97DA6A451BBD394800BBE6DA /* HCRotaryWheel.h */,
-				97DA6A461BBD394800BBE6DA /* HCRotaryWheel.m */,
+				97DB73ED1BC2781C005FA345 /* HCRotaryWheel.h */,
+				97DB73EE1BC2781C005FA345 /* HCRotaryWheel.m */,
 			);
 			name = Controls;
 			sourceTree = "<group>";
@@ -306,9 +301,8 @@
 				97DA6A0C1BBD340900BBE6DA /* ViewController.m in Sources */,
 				97DA6A091BBD340900BBE6DA /* AppDelegate.m in Sources */,
 				97DA6A4A1BBD61BB00BBE6DA /* RotaryWheelControl.m in Sources */,
-				974349C21BBEA7A3001CA551 /* PCCircularProgressView.m in Sources */,
+				97DB73EF1BC2781C005FA345 /* HCRotaryWheel.m in Sources */,
 				97DA6A3A1BBD344C00BBE6DA /* RotarySector.m in Sources */,
-				97DA6A471BBD394800BBE6DA /* HCRotaryWheel.m in Sources */,
 				97DA6A061BBD340900BBE6DA /* main.m in Sources */,
 				97DA6A401BBD34A900BBE6DA /* RotaryImageView.m in Sources */,
 			);

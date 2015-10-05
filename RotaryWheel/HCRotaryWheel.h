@@ -13,12 +13,8 @@
 
 IB_DESIGNABLE
 
-@protocol RotaryProtocol <NSObject>
-@end
+@interface HCRotaryWheelView : UIView
 
-@interface HCRotaryWheelView : UIView<RotaryProtocol>
-
-@property (weak) id <RotaryProtocol> delegate;
 @property (nonatomic, strong) IBInspectable UIColor* background;
 @property (nonatomic) IBInspectable int numberOfSections;
 @property (nonatomic) IBInspectable RotaryImageView *sectorView;

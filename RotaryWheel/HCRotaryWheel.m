@@ -23,12 +23,9 @@ static float minAlphavalue = 0.6;
 static float maxAlphavalue = 1.0;
 @synthesize numberOfSections = _numberOfSections;
 @synthesize sectorView = _sectorView;
-@synthesize rotaryImage1 = _rotaryImage1;
-@synthesize rotaryImage2 = _rotaryImage2;
-@synthesize rotaryImage3 = _rotaryImage3;
 @synthesize startTransform;
 @synthesize sectors;
-@synthesize delegate, container;
+@synthesize container;
 @synthesize currentSector;
 @synthesize timer;
 @synthesize timerDoesExist;
@@ -45,6 +42,7 @@ static float maxAlphavalue = 1.0;
 {
     if (self = [super initWithFrame:frame]) {
         [self initialSetup];
+        
     }
     return self;
 }
@@ -88,18 +86,13 @@ static float maxAlphavalue = 1.0;
     
     imageArray = [NSMutableArray array];
     sectorArray = [NSMutableArray array];
-    // 2 - Set properties
-    
-    self.delegate = self;
-    // 3 - Draw wheel
+    // Draw wheel
     self.currentSector = 0;
     
     container = [[UIView alloc] initWithFrame:rect];
-    // 2
     CGFloat angleSize = 2*M_PI/self.numberOfSections;
-    // 3
     for (int i = 0; i < self.numberOfSections; i++) {
-        // 4 - Create image view
+        // Create image view
         UIImageView *im = [[UIImageView alloc] init];
         im.layer.anchorPoint = CGPointMake(0.5f, 0.5f);
         im.layer.position = CGPointMake(container.bounds.size.width/2.0-container.frame.origin.x,
@@ -110,7 +103,7 @@ static float maxAlphavalue = 1.0;
         if (i == 0) {
             im.alpha = maxAlphavalue;
         }
-        // 5 - Set sector image
+        // Set sector image
         float offset = rect.size.height/9;
         float iconSize = 2.2 * offset;
         
