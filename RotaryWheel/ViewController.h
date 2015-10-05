@@ -12,7 +12,7 @@
 @interface ViewController : UIViewController <RotaryProtocol>
 
 @property (weak, nonatomic) IBOutlet UILabel *textLabel;
-@property (weak, nonatomic) IBOutlet HCRotaryWheelView *rotaryWheelView;
+@property (weak, nonatomic) IBOutlet HCRotaryWheel *rotaryWheelView;
 
 @end
 

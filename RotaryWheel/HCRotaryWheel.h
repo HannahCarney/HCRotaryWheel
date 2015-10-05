@@ -18,7 +18,7 @@ IB_DESIGNABLE
 - (void) wheelDidChangeValue:(int)currentSector;
 @end
 
-@interface HCRotaryWheelView : UIView
+@interface HCRotaryWheel : UIView
 
 @property (weak) id <RotaryProtocol> delegate;
 @property (nonatomic, strong) IBInspectable UIColor* background;

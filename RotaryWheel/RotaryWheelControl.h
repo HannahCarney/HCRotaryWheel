@@ -12,8 +12,7 @@
 @interface RotaryWheelControl : UIControl
 
 @property CGAffineTransform startTransform;
-@property (nonatomic, strong) NSMutableArray *sectors;
 
--(void)setUpControlWithSelf:(HCRotaryWheelView*)rotaryWheel andImageArray:(NSArray *)imageArray;
+-(void)setUpControlWithSelf:(HCRotaryWheel*)rotaryWheel andImageArray:(NSArray *)imageArray;
 
 @end

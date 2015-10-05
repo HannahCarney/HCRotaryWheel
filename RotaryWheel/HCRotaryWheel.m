@@ -11,13 +11,13 @@
 #import "RotarySector.h"
 #import "RotaryWheelControl.h"
 
-@implementation HCRotaryWheelView
+@implementation HCRotaryWheel
 {
     NSMutableArray *imageArray;
     NSMutableArray *sectorArray;
 }
 
-HCRotaryWheelView *wheel = nil;
+HCRotaryWheel *wheel = nil;
 
 static float minAlphavalue = 0.6;
 static float maxAlphavalue = 1.0;

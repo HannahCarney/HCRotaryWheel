@@ -16,8 +16,18 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleAspectFill" translatesAutoresizingMaskIntoConstraints="NO" id="bSG-uF-tro" customClass="HCRotaryWheelView">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7fq-mt-2jT">
+                                <rect key="frame" x="279" y="486" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleAspectFill" translatesAutoresizingMaskIntoConstraints="NO" id="bSG-uF-tro" customClass="HCRotaryWheel" customModule="HCRotaryWheel">
                                 <rect key="frame" x="133" y="94" width="335" height="364"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" link="YES" image="YES" selected="YES" playsSound="YES" keyboardKey="YES" staticText="YES" summaryElement="YES" updatesFrequently="YES" searchField="YES" startsMediaSession="YES" adjustable="YES" allowsDirectInteraction="YES" causesPageTurn="YES" header="YES"/>
+                                    <bool key="isElement" value="YES"/>
+                                </accessibility>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="335" id="86J-p8-Qzu"/>
                                     <constraint firstAttribute="height" constant="364" id="GsO-Ta-88E"/>
@@ -27,7 +37,7 @@
                                         <integer key="value" value="6"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="color" keyPath="background">
-                                        <color key="value" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="value" red="0.25098040700000002" green="0.0" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="image" keyPath="rotaryImage2" value="monkey"/>
                                     <userDefinedRuntimeAttribute type="image" keyPath="rotaryImage3" value="dog"/>
@@ -37,14 +47,8 @@
                                     <userDefinedRuntimeAttribute type="image" keyPath="rotaryImage1" value="bear"/>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7fq-mt-2jT">
-                                <rect key="frame" x="279" y="486" width="42" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.0" green="0.50196081399917603" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="bSG-uF-tro" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="-24" id="4cV-Vc-ior"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="7fq-mt-2jT" secondAttribute="bottom" constant="93" id="DKM-LG-0am"/>
