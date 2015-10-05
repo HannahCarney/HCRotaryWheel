@@ -21,13 +21,11 @@ HCRotaryWheelView *wheel = nil;
 
 static float minAlphavalue = 0.6;
 static float maxAlphavalue = 1.0;
-
 @synthesize numberOfSections = _numberOfSections;
 @synthesize sectorView = _sectorView;
 @synthesize rotaryImage1 = _rotaryImage1;
 @synthesize rotaryImage2 = _rotaryImage2;
 @synthesize rotaryImage3 = _rotaryImage3;
-
 @synthesize startTransform;
 @synthesize sectors;
 @synthesize delegate, container;
@@ -81,6 +79,7 @@ static float maxAlphavalue = 1.0;
 
 -(void)drawRect:(CGRect)rect
 {
+    // Draw for interface builder
     CGContextRef context = UIGraphicsGetCurrentContext();
     CGRect myFrame = CGRectMake(rect.origin.x, rect.origin.y, rect.size.width, rect.size.height);
     wheel.background = _background;
@@ -148,10 +147,6 @@ static float maxAlphavalue = 1.0;
         {
             self.sectorView.image = self.rotaryImage6;
         }
-//        else
-//        {
-//            self.sectorView.image = self.rotaryImage1;
-//        }
         [sectorArray addObject:im];
         
         self.userInteractionEnabled = YES;
@@ -159,14 +154,13 @@ static float maxAlphavalue = 1.0;
         im.userInteractionEnabled = YES;
         self.sectorView.userInteractionEnabled = YES;
         
-        // 6 - Add image view to container
+        // Add image view to container
         [container addSubview:im];
         
     }
-    // 7
     container.userInteractionEnabled = NO;
     
-    // 8 - Initialize sectors
+    // Initialize sectors
     sectors = [NSMutableArray arrayWithCapacity:self.numberOfSections];
 
     if (self.numberOfSections % 2 == 0) {
@@ -174,16 +168,13 @@ static float maxAlphavalue = 1.0;
     } else {
         [self buildSectorsOdd];
     }
-
-    // 9 - Call protocol method
+    // Call protocol method
     [self addSubview:container];
     RotaryWheelControl *rotaryControl = [[RotaryWheelControl alloc] initWithFrame:self.bounds];
     [self addSubview:rotaryControl];
     [rotaryControl setUpControlWithSelf:self andImageArray:imageArray];
-
-    
+    // Start timer
     [self startTimer];
-    
     UIRectFrame(myFrame);
     CGContextFillRect(context, myFrame);
     UIGraphicsEndImageContext();
@@ -194,7 +185,7 @@ static float maxAlphavalue = 1.0;
     NSLog(@"staring myTimer %@", self.timer.description);
     NSLog(@"staring myTimer");
     [self.timer invalidate]; // kill old timer, if it exists
-    //         4 - Timer for rotating wheel
+    //   Timer for rotating wheel
     self.timer = [NSTimer scheduledTimerWithTimeInterval:3.0
                                                   target:self
                                                 selector:@selector(rotate)
@@ -210,11 +201,11 @@ static float maxAlphavalue = 1.0;
 
 -(void)getPlacement
 {
-    // 1 - Get current container rotation in radians
+    //  Get current container rotation in radians
     CGFloat radians = atan2f(container.transform.b, container.transform.a);
-    // 2 - Initialize new value
+    // Initialize new value
     CGFloat newVal = 0.0;
-    // 3 - Iterate through all the sectors
+    //  Iterate through all the sectors
     for (RotarySector *s in sectors) {
         // 4 - Check for anomaly (occurs with even number of sectors)
         if (s.minValue > 0 && s.maxValue < 0) {
@@ -228,14 +219,13 @@ static float maxAlphavalue = 1.0;
                 currentSector = s.sector;
             }
         }
-        // 6 - All non-anomalous cases
+        // All non-anomalous cases
         else if (radians > s.minValue && radians < s.maxValue) {
             newVal = radians - s.midValue;
-            
             currentSector = s.sector;
         }
     }
-    // 7 - Set up animation for final rotation
+    //  Set up animation for final rotation
     [UIView beginAnimations:nil context:NULL];
     [UIView setAnimationDuration:0.2];
     CGAffineTransform t = CGAffineTransformRotate(container.transform, -newVal);
@@ -249,12 +239,11 @@ static float maxAlphavalue = 1.0;
         view.transform = CGAffineTransformMakeRotation(- (r+cr) );
     }
     
-    // 10 - Highlight selected sector
+    // Highlight selected sector
     UIImageView *im = [self getSectorByValue:currentSector];
     im.alpha = maxAlphavalue;
     [UIView commitAnimations];
 }
-
 
 - (void) rotate {
     [UIView animateWithDuration:0.6 delay:0 options:UIViewAnimationOptionCurveEaseInOut animations:^{
@@ -273,12 +262,9 @@ static float maxAlphavalue = 1.0;
             }
              im.alpha = minAlphavalue;
              [self getPlacement];
+            }
         }
-    }
-
-        
     } completion:nil];
-    
 }
 
 - (void) stopTimer
@@ -289,16 +275,15 @@ static float maxAlphavalue = 1.0;
     timerDoesExist = NO;
 }
 
-
 - (void) buildSectorsEven {
-    // 1 - Define sector length
+    //  Define sector length
     CGFloat fanWidth = M_PI*2/self.numberOfSections;
-    // 2 - Set initial midpoint
+    // Set initial midpoint
     CGFloat mid = 0;
-    // 3 - Iterate through all sectors
+    //  Iterate through all sectors
     for (int i = 0; i < self.numberOfSections; i++) {
         RotarySector *sector = [[RotarySector alloc] init];
-        // 4 - Set sector values
+        // Set sector values
         sector.midValue = mid;
         sector.minValue = mid - (fanWidth/2);
         sector.maxValue = mid + (fanWidth/2);
@@ -311,7 +296,7 @@ static float maxAlphavalue = 1.0;
         }
         mid -= fanWidth;
         NSLog(@"cl is %@", sector);
-        // 5 - Add sector to array
+        // Add sector to array
         [sectors addObject:sector];
     }
 }
@@ -326,14 +311,14 @@ static float maxAlphavalue = 1.0;
 }
 
 - (void) buildSectorsOdd {
-    // 1 - Define sector length
+    // Define sector length
     CGFloat fanWidth = M_PI*2/self.numberOfSections;
-    // 2 - Set initial midpoint
+    // Set initial midpoint
     CGFloat mid = 0;
-    // 3 - Iterate through all sectors
+    // Iterate through all sectors
     for (int i = 0; i < self.numberOfSections; i++) {
         RotarySector *sector = [[RotarySector alloc] init];
-        // 4 - Set sector values
+        // Set sector values
         sector.midValue = mid;
         sector.minValue = mid - (fanWidth/2);
         sector.maxValue = mid + (fanWidth/2);
@@ -343,11 +328,10 @@ static float maxAlphavalue = 1.0;
             mid = -mid;
             mid -= fanWidth;
         }
-        // 5 - Add sector to array
+        // Add sector to array
         [sectors addObject:sector];
         NSLog(@"cl is %@", sector);
     }
 }
-
 
 @end

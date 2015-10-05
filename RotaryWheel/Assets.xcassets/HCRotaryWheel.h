@@ -22,7 +22,6 @@ IB_DESIGNABLE
 @property (nonatomic, strong) IBInspectable UIColor* background;
 @property (nonatomic) IBInspectable int numberOfSections;
 @property (nonatomic) IBInspectable RotaryImageView *sectorView;
-
 @property (nonatomic) IBInspectable UIImage *rotaryImage1;
 @property (nonatomic) IBInspectable UIImage *rotaryImage2;
 @property (nonatomic) IBInspectable UIImage *rotaryImage3;

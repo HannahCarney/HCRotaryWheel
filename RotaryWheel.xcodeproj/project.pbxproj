@@ -122,8 +122,8 @@
 				97DA6A0A1BBD340900BBE6DA /* ViewController.h */,
 				97DA6A0B1BBD340900BBE6DA /* ViewController.m */,
 				97DA6A0D1BBD340900BBE6DA /* Main.storyboard */,
-				97DA6A101BBD340900BBE6DA /* Assets.xcassets */,
 				97DA6A121BBD340900BBE6DA /* LaunchScreen.storyboard */,
+				97DA6A101BBD340900BBE6DA /* Assets.xcassets */,
 				97DA6A151BBD340900BBE6DA /* Info.plist */,
 				97DA6A041BBD340900BBE6DA /* Supporting Files */,
 			);
