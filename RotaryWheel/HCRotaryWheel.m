@@ -231,7 +231,8 @@ static float maxAlphavalue = 1.0;
         
         view.transform = CGAffineTransformMakeRotation(- (r+cr) );
     }
-    
+    //call protocol method
+    [self.delegate wheelDidChangeValue:currentSector];
     // Highlight selected sector
     UIImageView *im = [self getSectorByValue:currentSector];
     im.alpha = maxAlphavalue;

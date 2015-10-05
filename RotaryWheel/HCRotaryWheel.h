@@ -13,8 +13,14 @@
 
 IB_DESIGNABLE
 
+@protocol RotaryProtocol <NSObject>
+
+- (void) wheelDidChangeValue:(int)currentSector;
+@end
+
 @interface HCRotaryWheelView : UIView
 
+@property (weak) id <RotaryProtocol> delegate;
 @property (nonatomic, strong) IBInspectable UIColor* background;
 @property (nonatomic) IBInspectable int numberOfSections;
 @property (nonatomic) IBInspectable RotaryImageView *sectorView;

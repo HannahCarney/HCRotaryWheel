@@ -7,9 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "HCRotaryWheel.h"
 
-@interface ViewController : UIViewController
+@interface ViewController : UIViewController <RotaryProtocol>
 
+@property (weak, nonatomic) IBOutlet UILabel *textLabel;
+@property (weak, nonatomic) IBOutlet HCRotaryWheelView *rotaryWheelView;
 
 @end
 
