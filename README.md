@@ -12,6 +12,18 @@ A Rotary Wheel for altering content that can be customised in Interface Builder
 - Background, number of elements and images can be changed in the Interface Builder
 
 ## How to use
+
+## Pod Installation
+
+HCRotaryWheel is available through [CocoaPods](http://cocoapods.org). To install
+it, simply add the following line to your Podfile:
+
+```ruby
+pod "HCRotaryWheel"
+```
+
+## Manual Installation
+
 1. Clone Project
 2. Build in Xcode for example project
 3. Drag Controls folder into your project
@@ -76,3 +88,11 @@ In ViewController.m
         }
         return text;
     }
+
+## Author
+
+Hannah Carney, hannahcarneyart@gmail.com
+
+## License
+
+HCRotaryWheel is available under the MIT license. See the LICENSE file for more info.
