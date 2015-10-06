@@ -11,8 +11,6 @@ A Rotary Wheel for altering content that can be customised in Interface Builder
 - Functionality for changing any content when wheel turns
 - Background, number of elements and images can be changed in the Interface Builder
 
-## How to use
-
 ## Pod Installation
 
 HCRotaryWheel is available through [CocoaPods](http://cocoapods.org). To install
@@ -35,7 +33,7 @@ Edit in Attributes Inspector
 
 <a href="http://www.freeimagehosting.net/commercial-photography/illinois/chicago/"><img src="http://i.imgur.com/z0CzEyI.png" alt="Chicago commercial photographers"></a>
 
-## Code
+## How to use
 
 In your ViewController.h drag your HCRotaryWheelView as an IBOutlet and add RotaryProtocol to call Delegate Methods
 
