@@ -17,7 +17,7 @@ HCRotaryWheel is available through [CocoaPods](http://cocoapods.org). To install
 it, simply add the following line to your Podfile:
 
 ```ruby
-pod "HCRotaryWheel"
+pod 'HCRotaryWheel', '~> 0.1.0'
 ```
 ### Note
 IBDesignable elements won't appear in XCode due to XCode bug (Xcode can`t currently parse @IBDesignable class from a static lib) - if you want to see your changes in the Interface Builder a manual install is recommended
