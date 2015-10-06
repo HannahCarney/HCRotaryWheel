@@ -3,6 +3,7 @@ A Rotary Wheel for altering content that can be customised in Interface Builder
 
 [![Demo CountPages alpha](https://j.gifs.com/v1eBnx.gif)](https://www.youtube.com/watch?v=pKzez4-whqY&feature=youtu.be)
 
+
 ## Functionality
 
 - Rotates on a Timer until Wheel is touched
@@ -10,6 +11,17 @@ A Rotary Wheel for altering content that can be customised in Interface Builder
 - Functionality for changing any content when wheel turns
 - Background, number of elements and images can be changed in the Interface Builder
 
+## How to use
+1. Clone Project
+2. Build in Xcode for example project
+3. Drag Controls folder into your project
+4. Enter class in Identity Inspector
+
+<a href="http://www.freeimagehosting.net/commercial-photography/illinois/chicago/"><img src="http://i.imgur.com/GPt5Kfs.png" alt="Chicago commercial photographers"></a>
+
+Edit in Attributes Inspector
+
+<a href="http://www.freeimagehosting.net/commercial-photography/illinois/chicago/"><img src="http://i.imgur.com/z0CzEyI.png" alt="Chicago commercial photographers"></a>
 
 ## Code
 
