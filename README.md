@@ -19,6 +19,8 @@ it, simply add the following line to your Podfile:
 ```ruby
 pod "HCRotaryWheel"
 ```
+### Note
+IBDesignable elements won't appear in XCode due to XCode bug - if you want to see your changes in the Interface Builder a manual install is recommended
 
 ## Manual Installation
 
