@@ -20,7 +20,7 @@ it, simply add the following line to your Podfile:
 pod "HCRotaryWheel"
 ```
 ### Note
-IBDesignable elements won't appear in XCode due to XCode bug - if you want to see your changes in the Interface Builder a manual install is recommended
+IBDesignable elements won't appear in XCode due to XCode bug (Xcode can`t currently parse @IBDesignable class from a static lib) - if you want to see your changes in the Interface Builder a manual install is recommended
 
 ## Manual Installation
 
