@@ -1,0 +1,6 @@
+framework module HCRotaryWheel {
+  umbrella header "Pods-HCRotaryWheel-umbrella.h"
+
+  export *
+  module * { export * }
+}
