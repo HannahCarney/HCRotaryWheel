@@ -1,6 +1,10 @@
 # HCRotaryWheel
 A Rotary Wheel for altering content that can be customised in Interface Builder
 
+Currently allows for up to 8 sectors in Interface Builder
+
+Contact me at hannahcarneyart@gmail.com if you want any more added functionality
+
 [![Demo CountPages alpha](https://j.gifs.com/v1eBnx.gif)](https://www.youtube.com/watch?v=pKzez4-whqY&feature=youtu.be)
 
 
@@ -18,7 +22,7 @@ it, simply add the following line to your Podfile:
 
 ```ruby
 use_frameworks!
-pod 'HCRotaryWheel', '~> 0.1.3'
+pod 'HCRotaryWheel', '~> 0.1.5'
 ```
 ### Note
 adding use_frameworks! allows for Cocoapods to parse IBDesignable elements
