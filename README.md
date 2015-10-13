@@ -40,6 +40,8 @@ Edit in Attributes Inspector
 
 In your ViewController.h drag your HCRotaryWheelView as an IBOutlet and add RotaryProtocol to call Delegate Methods
 
+    #import "HCRotaryWheel.h"
+    
     @interface ViewController : UIViewController <RotaryProtocol>
 
       @property (weak, nonatomic) IBOutlet UILabel *textLabel;
