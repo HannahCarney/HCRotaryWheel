@@ -36,7 +36,7 @@ Edit in Attributes Inspector
 
 <a href="http://www.freeimagehosting.net/commercial-photography/illinois/chicago/"><img src="http://i.imgur.com/z0CzEyI.png" alt="Chicago commercial photographers"></a>
 
-## How to use
+## How to use Objective-C
 
 In your ViewController.h drag your HCRotaryWheelView as an IBOutlet and add RotaryProtocol to call Delegate Methods
 
@@ -89,6 +89,48 @@ In ViewController.m
         }
         return text;
     }
+
+## How to use Swift
+
+    import UIKit
+    import HCRotaryWheel
+
+    class ViewController: UIViewController, RotaryProtocol {
+    
+        
+        @IBOutlet weak var textField: UITextField!
+        @IBOutlet weak var hcview: HCRotaryWheel!
+        
+        override func viewDidLoad() {
+            super.viewDidLoad()
+            self.hcview.delegate = self
+            self.textField.text = "Bear"
+            // Do any additional setup after loading the view, typically from a nib.
+        }
+    
+        func wheelDidChangeValue(currentSector: Int32) {
+            self.textField.text = self.getDescriptionText(currentSector);
+        }
+        
+        func getDescriptionText(newValue :Int32) -> String
+        {
+            switch newValue {
+            case 0:
+                return "Bear"
+            case 1:
+                return "Monkey"
+            case 2:
+                return "Dog"
+            case 3:
+                return "Ghost"
+            case 4:
+                return "Peace"
+            case 5:
+                return "Alien"
+            default:
+                return "Bear"
+            }
+        }
 
 ## Author
 
