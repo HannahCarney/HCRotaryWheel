@@ -22,25 +22,25 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7fq-mt-2jT">
-                                <rect key="frame" x="166.5" y="519.5" width="42" height="54.5"/>
+                                <rect key="frame" x="167" y="520" width="42" height="54"/>
                                 <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleAspectFill" translatesAutoresizingMaskIntoConstraints="NO" id="bSG-uF-tro" customClass="HCRotaryWheel">
-                                <rect key="frame" x="20.5" y="127.5" width="335" height="364"/>
+                                <rect key="frame" x="41" y="164" width="292" height="297"/>
                                 <accessibility key="accessibilityConfiguration">
                                     <accessibilityTraits key="traits" link="YES" image="YES" selected="YES" playsSound="YES" keyboardKey="YES" staticText="YES" summaryElement="YES" updatesFrequently="YES" searchField="YES" startsMediaSession="YES" adjustable="YES" allowsDirectInteraction="YES" causesPageTurn="YES" header="YES"/>
                                     <bool key="isElement" value="YES"/>
                                 </accessibility>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="335" id="86J-p8-Qzu"/>
-                                    <constraint firstAttribute="height" constant="364" id="GsO-Ta-88E"/>
+                                    <constraint firstAttribute="width" constant="292" id="86J-p8-Qzu"/>
+                                    <constraint firstAttribute="height" constant="297" id="GsO-Ta-88E"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="numberOfSections">
-                                        <integer key="value" value="3"/>
+                                        <integer key="value" value="6"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="color" keyPath="background">
                                         <color key="value" red="0.50196081400000003" green="0.13206993670833858" blue="0.14588820233039448" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -55,12 +55,6 @@
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="color" keyPath="sectorViewColor2">
                                         <color key="value" red="0.50196081400000003" green="0.27586085916700803" blue="0.25443580985617015" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="imageSize">
-                                        <real key="value" value="9.4000000000000004"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="imageSpacing">
-                                        <real key="value" value="2.7999999999999998"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="color" keyPath="sectorViewColor4">
                                         <color key="value" red="0.50196081400000003" green="0.038971075308814433" blue="0.083068651729000145" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -78,16 +72,19 @@
                                     <userDefinedRuntimeAttribute type="image" keyPath="image5" value="dog"/>
                                     <userDefinedRuntimeAttribute type="image" keyPath="rImage1" value="Ghost"/>
                                     <userDefinedRuntimeAttribute type="image" keyPath="rImage2" value="Ghost"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="imageSize">
+                                        <real key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.50196081399917603" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="bSG-uF-tro" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="-24" id="4cV-Vc-ior"/>
+                            <constraint firstItem="bSG-uF-tro" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="-21" id="4cV-Vc-ior"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="7fq-mt-2jT" secondAttribute="bottom" constant="93" id="DKM-LG-0am"/>
-                            <constraint firstItem="7fq-mt-2jT" firstAttribute="top" secondItem="bSG-uF-tro" secondAttribute="bottom" constant="28" id="OcM-eT-gUC"/>
-                            <constraint firstItem="7fq-mt-2jT" firstAttribute="centerX" secondItem="bSG-uF-tro" secondAttribute="centerX" id="sax-gb-Ln0"/>
-                            <constraint firstItem="bSG-uF-tro" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" constant="0.5" id="w3C-nl-azJ"/>
+                            <constraint firstItem="7fq-mt-2jT" firstAttribute="top" secondItem="bSG-uF-tro" secondAttribute="bottom" constant="59" id="OcM-eT-gUC"/>
+                            <constraint firstItem="7fq-mt-2jT" firstAttribute="centerX" secondItem="bSG-uF-tro" secondAttribute="centerX" constant="1" id="sax-gb-Ln0"/>
+                            <constraint firstItem="bSG-uF-tro" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" constant="-0.5" id="w3C-nl-azJ"/>
                         </constraints>
                     </view>
                     <connections>
@@ -97,7 +94,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="364" y="485"/>
+            <point key="canvasLocation" x="364" y="484.40779610194909"/>
         </scene>
     </scenes>
     <resources>

@@ -24,7 +24,6 @@ IB_DESIGNABLE
 @property (nonatomic, strong) IBInspectable UIColor* background;
 @property (nonatomic) IBInspectable int numberOfSections;
 @property (nonatomic) IBInspectable float imageSize;
-@property (nonatomic) IBInspectable float imageSpacing;
 @property (nonatomic) IBInspectable double minAlphavalue;
 @property (nonatomic) IBInspectable float maxAlphavalue;
 @property (nonatomic) IBInspectable UIColor *color1;

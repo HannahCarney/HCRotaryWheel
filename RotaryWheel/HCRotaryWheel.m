@@ -29,9 +29,8 @@ HCRotaryWheel *wheel;
 @synthesize currentSector;
 @synthesize timer;
 @synthesize timerDoesExist;
-@synthesize imageSize = _imageSize;
-@synthesize imageSpacing = _imageSpacing;
-@synthesize turnOnDropShadow = _turnOnDropShadow;
+@synthesize imageSize;
+@synthesize turnOnDropShadow;
 @synthesize turnOnColorForCurrent;
 @synthesize  colorForCurrent;
 
@@ -58,8 +57,6 @@ HCRotaryWheel *wheel;
     _background = [UIColor redColor];
     self.layer.contentsScale = [UIScreen mainScreen].scale;
     self.numberOfSections = 6;
-    self.imageSize = 1;
-    self.imageSpacing = 7.5;
     self.minAlphavalue = 1.0;
     self.maxAlphavalue = 1.0;
     [[NSNotificationCenter defaultCenter]
@@ -96,7 +93,6 @@ HCRotaryWheel *wheel;
     container = [[UIView alloc] initWithFrame:rect];
     CGFloat angleSize = 2*M_PI/self.numberOfSections;
     for (int i = 0; i < self.numberOfSections; i++) {
-   
         // Create image view
         UIImageView *im = [[UIImageView alloc] init];
         im.layer.anchorPoint = CGPointMake(0, 0);
@@ -107,8 +103,7 @@ HCRotaryWheel *wheel;
         im.tag = i;
         // Set sector image
         double degrees = (360/(int)self.numberOfSections)/2;
-        if (degrees >= 90)
-        {
+        if (degrees >= 90){
             degrees = 60;
         }
         double radiansOfAngle = (degrees) * M_PI/180;
@@ -117,13 +112,10 @@ HCRotaryWheel *wheel;
         double tanAngle = cos(radiansOfAngle);
         double first = (1.0f / halfOfRadius);
         float radiusOfLittleCircle = 1.0f / (tanAngle * first);
-        self.imageSize = radiusOfLittleCircle * 2/3;
-        
-        float iconSize = self.imageSize;
+        double iconSize = (radiusOfLittleCircle * 2/3) + self.imageSize;
         int height = radiusOfBigCircle/4;
         im.backgroundColor = [UIColor redColor];
-        
-        self.sectorView = [[RotaryImageView alloc] initWithFrame: CGRectMake(radiusOfBigCircle - self.imageSize - height,radiusOfBigCircle - self.imageSize - height, iconSize, iconSize)];
+        self.sectorView = [[RotaryImageView alloc] initWithFrame: CGRectMake(radiusOfBigCircle - iconSize - height,radiusOfBigCircle - iconSize - height, iconSize, iconSize)];
         self.sectorView.transform = CGAffineTransformMakeRotation(-1 * (angleSize*i + .8));
         [im addSubview:self.sectorView];
         [imageArray addObject:self.sectorView];
@@ -142,7 +134,7 @@ HCRotaryWheel *wheel;
             if (turnOnColorForCurrent) {
                 [self.sectorView setTintColor:colorForCurrent];}
         }
-        if (_turnOnDropShadow)
+        if (self.turnOnDropShadow)
         {
             self.sectorView = [self turnOnIconDropShadow:self.sectorView];
         }
