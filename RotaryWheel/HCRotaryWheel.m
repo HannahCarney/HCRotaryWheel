@@ -127,7 +127,7 @@ HCRotaryWheel *wheel;
         self.sectorView.transform = CGAffineTransformMakeRotation(-1 * (angleSize*i + .8));
         [im addSubview:self.sectorView];
         [imageArray addObject:self.sectorView];
-        NSString *rotaryName = [NSString stringWithFormat:@"rotaryImage%d", i + 1];
+        NSString *rotaryName = [NSString stringWithFormat:@"image%d", i + 1];
         NSString *rotaryColor = [NSString stringWithFormat:@"color%d",i + 1];
         self.sectorView.tag = i;
         id rotaryNameValue = [self valueForKey:rotaryName];

@@ -23,7 +23,6 @@ IB_DESIGNABLE
 @property (weak) id <RotaryProtocol> delegate;
 @property (nonatomic, strong) IBInspectable UIColor* background;
 @property (nonatomic) IBInspectable int numberOfSections;
-@property (nonatomic) RotaryImageView *sectorView;
 @property (nonatomic) IBInspectable float imageSize;
 @property (nonatomic) IBInspectable float imageSpacing;
 @property (nonatomic) IBInspectable double minAlphavalue;
@@ -40,18 +39,21 @@ IB_DESIGNABLE
 @property (nonatomic) IBInspectable UIColor *color10;
 @property (nonatomic) IBInspectable UIColor *color11;
 @property (nonatomic) IBInspectable UIColor *color12;
-@property (nonatomic) IBInspectable UIImage *rotaryImage1;
-@property (nonatomic) IBInspectable UIImage *rotaryImage2;
-@property (nonatomic) IBInspectable UIImage *rotaryImage3;
-@property (nonatomic) IBInspectable UIImage *rotaryImage4;
-@property (nonatomic) IBInspectable UIImage *rotaryImage5;
-@property (nonatomic) IBInspectable UIImage *rotaryImage6;
-@property (nonatomic) IBInspectable UIImage *rotaryImage7;
-@property (nonatomic) IBInspectable UIImage *rotaryImage8;
-@property (nonatomic) IBInspectable UIImage *rotaryImage9;
-@property (nonatomic) IBInspectable UIImage *rotaryImage10;
-@property (nonatomic) IBInspectable UIImage *rotaryImage11;
-@property (nonatomic) IBInspectable UIImage *rotaryImage12;
+@property (nonatomic) IBInspectable UIImage *image1;
+@property (nonatomic) IBInspectable UIImage *image2;
+@property (nonatomic) IBInspectable UIImage *image3;
+@property (nonatomic) IBInspectable UIImage *image4;
+@property (nonatomic) IBInspectable UIImage *image5;
+@property (nonatomic) IBInspectable UIImage *image6;
+@property (nonatomic) IBInspectable UIImage *image7;
+@property (nonatomic) IBInspectable UIImage *image8;
+@property (nonatomic) IBInspectable UIImage *image9;
+@property (nonatomic) IBInspectable UIImage *image10;
+@property (nonatomic) IBInspectable UIImage *image11;
+@property (nonatomic) IBInspectable UIImage *image12;
+
+
+@property (nonatomic) RotaryImageView *sectorView;
 @property (nonatomic, strong) UIView *container;
 @property (nonatomic, retain) NSTimer *timer;
 @property CGAffineTransform startTransform;
@@ -59,7 +61,6 @@ IB_DESIGNABLE
 @property int currentSector;
 @property BOOL turnOnDropShadow;
 @property (nonatomic) BOOL timerDoesExist;
-
 @property (nonatomic) BOOL turnOnColorForCurrent;
 @property (nonatomic) UIColor* colorForCurrent;
 -(void)rotate;

@@ -40,12 +40,11 @@
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="numberOfSections">
-                                        <integer key="value" value="6"/>
+                                        <integer key="value" value="3"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="color" keyPath="background">
                                         <color key="value" red="0.50196081400000003" green="0.13206993670833858" blue="0.14588820233039448" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="image" keyPath="rotaryImage2" value="monkey"/>
                                     <userDefinedRuntimeAttribute type="image" keyPath="rotaryImage3" value="dog"/>
                                     <userDefinedRuntimeAttribute type="image" keyPath="rotaryImage6" value="alien"/>
                                     <userDefinedRuntimeAttribute type="image" keyPath="rotaryImage4" value="Ghost"/>
@@ -58,16 +57,10 @@
                                         <color key="value" red="0.50196081400000003" green="0.27586085916700803" blue="0.25443580985617015" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="number" keyPath="imageSize">
-                                        <real key="value" value="6"/>
+                                        <real key="value" value="9.4000000000000004"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="number" keyPath="imageSpacing">
-                                        <real key="value" value="5"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="minAlphavalue">
-                                        <real key="value" value="0.20000000000000001"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="maxAlphavalue">
-                                        <real key="value" value="3"/>
+                                        <real key="value" value="2.7999999999999998"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="color" keyPath="sectorViewColor4">
                                         <color key="value" red="0.50196081400000003" green="0.038971075308814433" blue="0.083068651729000145" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -78,6 +71,13 @@
                                     <userDefinedRuntimeAttribute type="color" keyPath="color1">
                                         <color key="value" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="image" keyPath="image1" value="Ghost"/>
+                                    <userDefinedRuntimeAttribute type="image" keyPath="image2" value="alien"/>
+                                    <userDefinedRuntimeAttribute type="image" keyPath="image3" value="bear"/>
+                                    <userDefinedRuntimeAttribute type="image" keyPath="image4" value="danphone"/>
+                                    <userDefinedRuntimeAttribute type="image" keyPath="image5" value="dog"/>
+                                    <userDefinedRuntimeAttribute type="image" keyPath="rImage1" value="Ghost"/>
+                                    <userDefinedRuntimeAttribute type="image" keyPath="rImage2" value="Ghost"/>
                                 </userDefinedRuntimeAttributes>
                             </view>
                         </subviews>
@@ -104,8 +104,8 @@
         <image name="Ghost" width="269" height="247"/>
         <image name="alien" width="220" height="230"/>
         <image name="bear" width="220" height="230"/>
+        <image name="danphone" width="99" height="134"/>
         <image name="dog" width="360" height="360"/>
-        <image name="monkey" width="620" height="648"/>
         <image name="peace" width="160" height="160"/>
     </resources>
 </document>
