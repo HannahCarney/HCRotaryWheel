@@ -13,12 +13,10 @@
 		97DA6A0F1BBD340900BBE6DA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 97DA6A0D1BBD340900BBE6DA /* Main.storyboard */; };
 		97DA6A111BBD340900BBE6DA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 97DA6A101BBD340900BBE6DA /* Assets.xcassets */; };
 		97DA6A141BBD340900BBE6DA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 97DA6A121BBD340900BBE6DA /* LaunchScreen.storyboard */; };
-		97DA6A1F1BBD340900BBE6DA /* RotaryWheelTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 97DA6A1E1BBD340900BBE6DA /* RotaryWheelTests.m */; };
-		97DA6A2A1BBD340900BBE6DA /* RotaryWheelUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 97DA6A291BBD340900BBE6DA /* RotaryWheelUITests.m */; };
-		97DA6A3A1BBD344C00BBE6DA /* RotarySector.m in Sources */ = {isa = PBXBuildFile; fileRef = 97DA6A391BBD344C00BBE6DA /* RotarySector.m */; settings = {ASSET_TAGS = (); }; };
-		97DA6A401BBD34A900BBE6DA /* RotaryImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 97DA6A3F1BBD34A900BBE6DA /* RotaryImageView.m */; settings = {ASSET_TAGS = (); }; };
-		97DA6A4A1BBD61BB00BBE6DA /* RotaryWheelControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 97DA6A491BBD61BB00BBE6DA /* RotaryWheelControl.m */; settings = {ASSET_TAGS = (); }; };
-		97DB73EF1BC2781C005FA345 /* HCRotaryWheel.m in Sources */ = {isa = PBXBuildFile; fileRef = 97DB73EE1BC2781C005FA345 /* HCRotaryWheel.m */; settings = {ASSET_TAGS = (); }; };
+		97DA6A3A1BBD344C00BBE6DA /* RotarySector.m in Sources */ = {isa = PBXBuildFile; fileRef = 97DA6A391BBD344C00BBE6DA /* RotarySector.m */; };
+		97DA6A401BBD34A900BBE6DA /* RotaryImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 97DA6A3F1BBD34A900BBE6DA /* RotaryImageView.m */; };
+		97DA6A4A1BBD61BB00BBE6DA /* RotaryWheelControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 97DA6A491BBD61BB00BBE6DA /* RotaryWheelControl.m */; };
+		97DB73EF1BC2781C005FA345 /* HCRotaryWheel.m in Sources */ = {isa = PBXBuildFile; fileRef = 97DB73EE1BC2781C005FA345 /* HCRotaryWheel.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,11 +48,7 @@
 		97DA6A131BBD340900BBE6DA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		97DA6A151BBD340900BBE6DA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		97DA6A1A1BBD340900BBE6DA /* RotaryWheelTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RotaryWheelTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		97DA6A1E1BBD340900BBE6DA /* RotaryWheelTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RotaryWheelTests.m; sourceTree = "<group>"; };
-		97DA6A201BBD340900BBE6DA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		97DA6A251BBD340900BBE6DA /* RotaryWheelUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RotaryWheelUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		97DA6A291BBD340900BBE6DA /* RotaryWheelUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RotaryWheelUITests.m; sourceTree = "<group>"; };
-		97DA6A2B1BBD340900BBE6DA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		97DA6A381BBD344C00BBE6DA /* RotarySector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RotarySector.h; sourceTree = "<group>"; };
 		97DA6A391BBD344C00BBE6DA /* RotarySector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RotarySector.m; sourceTree = "<group>"; };
 		97DA6A3E1BBD34A900BBE6DA /* RotaryImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RotaryImageView.h; sourceTree = "<group>"; };
@@ -94,8 +88,6 @@
 			isa = PBXGroup;
 			children = (
 				97DA6A031BBD340900BBE6DA /* RotaryWheel */,
-				97DA6A1D1BBD340900BBE6DA /* RotaryWheelTests */,
-				97DA6A281BBD340900BBE6DA /* RotaryWheelUITests */,
 				97DA6A021BBD340900BBE6DA /* Products */,
 			);
 			sourceTree = "<group>";
@@ -133,24 +125,6 @@
 				97DA6A051BBD340900BBE6DA /* main.m */,
 			);
 			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		97DA6A1D1BBD340900BBE6DA /* RotaryWheelTests */ = {
-			isa = PBXGroup;
-			children = (
-				97DA6A1E1BBD340900BBE6DA /* RotaryWheelTests.m */,
-				97DA6A201BBD340900BBE6DA /* Info.plist */,
-			);
-			path = RotaryWheelTests;
-			sourceTree = "<group>";
-		};
-		97DA6A281BBD340900BBE6DA /* RotaryWheelUITests */ = {
-			isa = PBXGroup;
-			children = (
-				97DA6A291BBD340900BBE6DA /* RotaryWheelUITests.m */,
-				97DA6A2B1BBD340900BBE6DA /* Info.plist */,
-			);
-			path = RotaryWheelUITests;
 			sourceTree = "<group>";
 		};
 		97DA6A371BBD341F00BBE6DA /* Controls */ = {
@@ -312,7 +286,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				97DA6A1F1BBD340900BBE6DA /* RotaryWheelTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -320,7 +293,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				97DA6A2A1BBD340900BBE6DA /* RotaryWheelUITests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

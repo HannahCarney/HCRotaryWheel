@@ -17,7 +17,7 @@ IB_DESIGNABLE
 
 @end
 
-@interface HCRotaryWheelView : UIView
+@interface HCRotaryWheel : UIView
 
 @property (weak) id <RotaryProtocol> delegate;
 @property (nonatomic) IBInspectable UIColor *background;
@@ -35,6 +35,14 @@ IB_DESIGNABLE
 @property (nonatomic) NSMutableArray *sectors;
 @property int currentSector;
 @property (nonatomic) BOOL timerDoesExist;
+
+@property BOOL turnOnDropShadow;
+
+
+@property (nonatomic) IBInspectable float imageSize;
+@property (nonatomic) IBInspectable float imageSpacing;
+@property (nonatomic) IBInspectable double minAlphavalue;
+@property (nonatomic) IBInspectable float maxAlphavalue;
 
 -(void)rotate;
 -(void)getPlacement;

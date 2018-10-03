@@ -1,1 +1,0 @@
-../../../HCRotaryWheel/Pod/Classes/RotaryImageView.h

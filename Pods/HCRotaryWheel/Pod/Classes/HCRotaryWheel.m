@@ -6,18 +6,18 @@
 //  Copyright © 2015 Hannah Carney. All rights reserved.
 //
 
-#import "HCRotaryWheelView.h"
+#import "HCRotaryWheel.h"
 #import "RotaryImageView.h"
 #import "RotarySector.h"
 #import "RotaryWheelControl.h"
 
-@implementation HCRotaryWheelView
+@implementation HCRotaryWheel
 {
     NSMutableArray *imageArray;
     NSMutableArray *sectorArray;
 }
 
-HCRotaryWheelView *wheel = nil;
+HCRotaryWheel *wheel;
 
 static float minAlphavalue = 0.6;
 static float maxAlphavalue = 1.0;
@@ -87,9 +87,12 @@ static float maxAlphavalue = 1.0;
 
 -(void)drawRect:(CGRect)rect
 {
+    CGContextClearRect(UIGraphicsGetCurrentContext(), rect);
     // Draw for interface builder
     CGContextRef context = UIGraphicsGetCurrentContext();
+    
     CGRect myFrame = CGRectMake(rect.origin.x, rect.origin.y, rect.size.width, rect.size.height);
+    
     wheel.background = _background;
     
     [_background set];
@@ -98,13 +101,15 @@ static float maxAlphavalue = 1.0;
     sectorArray = [NSMutableArray array];
     // Draw wheel
     self.currentSector = 0;
-    
+    [self.delegate wheelDidChangeValue:currentSector];
+    [container removeFromSuperview];
+    container = nil;
     container = [[UIView alloc] initWithFrame:rect];
     CGFloat angleSize = 2*M_PI/self.numberOfSections;
     for (int i = 0; i < self.numberOfSections; i++) {
         // Create image view
         UIImageView *im = [[UIImageView alloc] init];
-        im.layer.anchorPoint = CGPointMake(0.5f, 0.5f);
+        im.layer.anchorPoint = CGPointMake(0, 0);
         im.layer.position = CGPointMake(container.bounds.size.width/2.0-container.frame.origin.x,
                                         container.bounds.size.height/2.0-container.frame.origin.y);
         im.transform = CGAffineTransformMakeRotation(angleSize*i + .8);
@@ -114,44 +119,40 @@ static float maxAlphavalue = 1.0;
             im.alpha = maxAlphavalue;
         }
         // Set sector image
-        float offset = rect.size.height/9;
-        float iconSize = 2.2 * offset;
+        double degrees = (360/(int)self.numberOfSections)/2;
+        if (degrees >= 90)
+        {
+            degrees = 60;
+        }
+        double radiansOfAngle = (degrees) * M_PI/180;
+        int radiusOfBigCircle = rect.size.width/2;
+        int halfOfRadius = radiusOfBigCircle/2;
+        double tanAngle = cos(radiansOfAngle);
+        double first = (1.0f / halfOfRadius);
+        float radiusOfLittleCircle = 1.0f / (tanAngle * first);
+        self.imageSize = radiusOfLittleCircle * 2/3;
         
-        self.sectorView = [[RotaryImageView alloc] initWithFrame: CGRectMake(offset, offset, iconSize, iconSize)];
+        float iconSize = self.imageSize;
+        int height = radiusOfBigCircle/4;
+        im.backgroundColor = [UIColor redColor];
         
-        
+        self.sectorView = [[RotaryImageView alloc] initWithFrame: CGRectMake(radiusOfBigCircle - self.imageSize - height,radiusOfBigCircle - self.imageSize - height, iconSize, iconSize)];
         self.sectorView.transform = CGAffineTransformMakeRotation(-1 * (angleSize*i + .8));
         [im addSubview:self.sectorView];
-        
-        
         [imageArray addObject:self.sectorView];
+        NSString *rotaryName = [NSString stringWithFormat:@"rotaryImage%d", i + 1];
+        NSString *rotaryColor = [NSString stringWithFormat:@"sectorViewColor%d",i + 1];
         self.sectorView.tag = i;
-        if (self.sectorView.tag == 0)
+        self.sectorView.backgroundColor = [UIColor greenColor];
+        id rotaryNameValue = [self valueForKey:rotaryName];
+        id rotaryColorValue = [self valueForKey:rotaryColor];
+        [self.sectorView setValue:rotaryNameValue forKey:@"image"];
+        [self.sectorView setValue:rotaryColorValue forKey:@"tintColor"];
+        if (_turnOnDropShadow)
         {
-            self.sectorView.image = self.rotaryImage1;
-        }
-        if (self.sectorView.tag == 1)
-        {
-            self.sectorView.image = self.rotaryImage2;
-        }
-        if (self.sectorView.tag == 2)
-        {
-            self.sectorView.image = self.rotaryImage3;
-        }
-        if (self.sectorView.tag == 3)
-        {
-            self.sectorView.image = self.rotaryImage4;
-        }
-        if (self.sectorView.tag == 4)
-        {
-            self.sectorView.image = self.rotaryImage5;
-        }
-        if (self.sectorView.tag == 5)
-        {
-            self.sectorView.image = self.rotaryImage6;
+            self.sectorView = [self turnOnIconDropShadow:self.sectorView];
         }
         [sectorArray addObject:im];
-        
         self.userInteractionEnabled = YES;
         
         im.userInteractionEnabled = YES;
@@ -159,7 +160,6 @@ static float maxAlphavalue = 1.0;
         
         // Add image view to container
         [container addSubview:im];
-        
     }
     container.userInteractionEnabled = NO;
     
