@@ -29,14 +29,14 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleAspectFill" translatesAutoresizingMaskIntoConstraints="NO" id="bSG-uF-tro" customClass="HCRotaryWheel">
-                                <rect key="frame" x="16" y="70" width="305" height="324"/>
+                                <rect key="frame" x="-54" y="60" width="396" height="452"/>
                                 <accessibility key="accessibilityConfiguration">
                                     <accessibilityTraits key="traits" link="YES" image="YES" selected="YES" playsSound="YES" keyboardKey="YES" staticText="YES" summaryElement="YES" updatesFrequently="YES" searchField="YES" startsMediaSession="YES" adjustable="YES" allowsDirectInteraction="YES" causesPageTurn="YES" header="YES"/>
                                     <bool key="isElement" value="YES"/>
                                 </accessibility>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="305" id="86J-p8-Qzu"/>
-                                    <constraint firstAttribute="height" constant="324" id="GsO-Ta-88E"/>
+                                    <constraint firstAttribute="width" constant="396" id="86J-p8-Qzu"/>
+                                    <constraint firstAttribute="height" constant="452" id="GsO-Ta-88E"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="image" keyPath="image2" value="bear"/>
@@ -55,7 +55,7 @@
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="image" keyPath="image1" value="Ghost"/>
                                     <userDefinedRuntimeAttribute type="number" keyPath="imageSize">
-                                        <real key="value" value="-19"/>
+                                        <real key="value" value="-54"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="color" keyPath="color2">
                                         <color key="value" red="0.0" green="0.97680455450000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -71,11 +71,11 @@
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.50196081399917603" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="bSG-uF-tro" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="-101.5" id="4cV-Vc-ior"/>
+                            <constraint firstItem="bSG-uF-tro" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="-47.5" id="4cV-Vc-ior"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="7fq-mt-2jT" secondAttribute="bottom" constant="93" id="DKM-LG-0am"/>
-                            <constraint firstItem="7fq-mt-2jT" firstAttribute="top" secondItem="bSG-uF-tro" secondAttribute="bottom" constant="126" id="OcM-eT-gUC"/>
-                            <constraint firstItem="7fq-mt-2jT" firstAttribute="centerX" secondItem="bSG-uF-tro" secondAttribute="centerX" constant="19.5" id="sax-gb-Ln0"/>
-                            <constraint firstItem="bSG-uF-tro" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" constant="-19" id="w3C-nl-azJ"/>
+                            <constraint firstItem="7fq-mt-2jT" firstAttribute="top" secondItem="bSG-uF-tro" secondAttribute="bottom" constant="8" id="OcM-eT-gUC"/>
+                            <constraint firstItem="7fq-mt-2jT" firstAttribute="centerX" secondItem="bSG-uF-tro" secondAttribute="centerX" constant="44" id="sax-gb-Ln0"/>
+                            <constraint firstItem="bSG-uF-tro" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" constant="-43.5" id="w3C-nl-azJ"/>
                         </constraints>
                     </view>
                     <connections>

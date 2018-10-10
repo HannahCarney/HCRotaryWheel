@@ -77,7 +77,7 @@ HCRotaryWheel *wheel;
     // Draw for interface builder
     CGContextRef context = UIGraphicsGetCurrentContext();
     
-    CGRect myFrame = CGRectMake(rect.origin.x, rect.origin.y, rect.size.width, rect.size.height);
+    CGRect myFrame = CGRectMake(rect.origin.x, rect.origin.y, rect.size.width, rect.size.width);
     
     wheel.background = _background;
     
@@ -97,7 +97,7 @@ HCRotaryWheel *wheel;
         UIImageView *im = [[UIImageView alloc] init];
         im.layer.anchorPoint = CGPointMake(0, 0);
         im.layer.position = CGPointMake(container.bounds.size.width/2.0-container.frame.origin.x,
-                                        container.bounds.size.height/2.0-container.frame.origin.y);
+                                        container.bounds.size.width/2.0-container.frame.origin.x);
         im.transform = CGAffineTransformMakeRotation(angleSize*i + .8);
         im.alpha = self.minAlphavalue;
         im.tag = i;
