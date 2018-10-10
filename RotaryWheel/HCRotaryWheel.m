@@ -108,28 +108,23 @@ HCRotaryWheel *wheel;
         if (degrees >= 90){
             degrees = 60;
         }
-        double radiansOfAngle = (degrees) * M_PI/180;
-        float diameterOfBigCircle = rect.size.width;
-        float radiusOfBigCircle = rect.size.width/2;
-        float halfOfRadius = radiusOfBigCircle/2;
-        double tanAngle = cos(radiansOfAngle);
-        double first = (1.0f / halfOfRadius);
+    
+        double radiusOfBigCircle = rect.size.width/2;
         
         [self addOutlineforCircle:radiusOfBigCircle andX:0];
 
-        float iconSize = (radiusOfBigCircle * 2/3) + self.imageSize;
-        float radiusOfLittleCircle = radiusOfBigCircle - [self getHypotenuse:iconSize];
+        double iconSize = (radiusOfBigCircle * 2/3) + self.imageSize;
+        double radiusOfLittleCircle = radiusOfBigCircle - [self getHypotenuse:iconSize];
 //        degreesOfStarting = degrees/2;
 //        int height = rect.size.height - radiusOfBigCircle * 2;
-        [self addOutlineforCircle:radiusOfLittleCircle andX:radiusOfBigCircle - radiusOfLittleCircle];
-        float startingValueOfSectorCircle = [self calculteDistanceBetweenRadius:radiusOfBigCircle andIconWidth:iconSize];
-        [im.layer addSublayer:         [self addOutlineforSquare:iconSize/2 andX:radiusOfLittleCircle]
-     
-];
+        [self addOutlineforCircle:[self getHypotenuse:radiusOfLittleCircle] andX:radiusOfBigCircle - [self getHypotenuse:radiusOfLittleCircle]];
+//        [self addOutlineforSquare:radiusOfLittleCircle andX:(radiusOfBigCircle - radiusOfLittleCircle)/ 2];
+    
+        [im.layer addSublayer: [self addOutlineforSquare:iconSize andX:radiusOfLittleCircle]];
+//        [self.layer addSublayer: [self addOutlineforSquare:iconSize andX:radiusOfLittleCircle]];
 //        im.frame = startingValueOfSectorCircle;
 
-         self.sectorView = [[RotaryImageView alloc] initWithFrame: CGRectMake(radiusOfLittleCircle, radiusOfLittleCircle, iconSize, iconSize)];
-        self.sectorView.layer.cornerRadius = iconSize/2;
+        self.sectorView = [[RotaryImageView alloc] initWithFrame: CGRectMake(radiusOfLittleCircle, radiusOfLittleCircle, iconSize, iconSize)];
         self.sectorView.transform = CGAffineTransformMakeRotation(-1 * (angleSize*i + .8));
         [im addSubview:self.sectorView];
         [imageArray addObject:self.sectorView];
@@ -223,7 +218,7 @@ HCRotaryWheel *wheel;
 
 -(CAShapeLayer *)addOutlineforSquare:(float)circle andX:(float)starting{
     CAShapeLayer *circleLayer = [CAShapeLayer layer];
-    [circleLayer setPath:[[UIBezierPath bezierPathWithRect:CGRectMake(starting, starting, circle * 2, circle * 2)] CGPath]];
+    [circleLayer setPath:[[UIBezierPath bezierPathWithRect:CGRectMake(starting, starting, circle, circle)] CGPath]];
     [circleLayer setStrokeColor:[[UIColor redColor] CGColor]];
     [circleLayer setFillColor:[[UIColor clearColor] CGColor]];
     return circleLayer;
