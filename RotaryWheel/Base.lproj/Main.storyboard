@@ -29,62 +29,44 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleAspectFill" translatesAutoresizingMaskIntoConstraints="NO" id="bSG-uF-tro" customClass="HCRotaryWheel">
-                                <rect key="frame" x="41" y="164" width="292" height="297"/>
+                                <rect key="frame" x="34" y="154" width="307" height="308"/>
                                 <accessibility key="accessibilityConfiguration">
                                     <accessibilityTraits key="traits" link="YES" image="YES" selected="YES" playsSound="YES" keyboardKey="YES" staticText="YES" summaryElement="YES" updatesFrequently="YES" searchField="YES" startsMediaSession="YES" adjustable="YES" allowsDirectInteraction="YES" causesPageTurn="YES" header="YES"/>
                                     <bool key="isElement" value="YES"/>
                                 </accessibility>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="292" id="86J-p8-Qzu"/>
-                                    <constraint firstAttribute="height" constant="297" id="GsO-Ta-88E"/>
+                                    <constraint firstAttribute="width" constant="307" id="86J-p8-Qzu"/>
+                                    <constraint firstAttribute="height" constant="308" id="GsO-Ta-88E"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="image" keyPath="image2" value="bear"/>
+                                    <userDefinedRuntimeAttribute type="image" keyPath="image3" value="danphone"/>
+                                    <userDefinedRuntimeAttribute type="image" keyPath="image4" value="dog"/>
+                                    <userDefinedRuntimeAttribute type="image" keyPath="image5" value="alien"/>
+                                    <userDefinedRuntimeAttribute type="image" keyPath="image6" value="monkey"/>
                                     <userDefinedRuntimeAttribute type="number" keyPath="numberOfSections">
-                                        <integer key="value" value="6"/>
+                                        <integer key="value" value="4"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="color" keyPath="background">
-                                        <color key="value" red="0.50196081400000003" green="0.13206993670833858" blue="0.14588820233039448" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="image" keyPath="rotaryImage3" value="dog"/>
-                                    <userDefinedRuntimeAttribute type="image" keyPath="rotaryImage6" value="alien"/>
-                                    <userDefinedRuntimeAttribute type="image" keyPath="rotaryImage4" value="Ghost"/>
-                                    <userDefinedRuntimeAttribute type="image" keyPath="rotaryImage5" value="peace"/>
-                                    <userDefinedRuntimeAttribute type="image" keyPath="rotaryImage1" value="bear"/>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="sectorViewColor1">
                                         <color key="value" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="sectorViewColor2">
-                                        <color key="value" red="0.50196081400000003" green="0.27586085916700803" blue="0.25443580985617015" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="sectorViewColor4">
-                                        <color key="value" red="0.50196081400000003" green="0.038971075308814433" blue="0.083068651729000145" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="sectorViewColor5">
-                                        <color key="value" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="imageSize">
+                                        <real key="value" value="27"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="color" keyPath="color1">
-                                        <color key="value" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="value" red="0.66799789669999998" green="0.47512125970000002" blue="0.25860109930000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="image" keyPath="image1" value="Ghost"/>
-                                    <userDefinedRuntimeAttribute type="image" keyPath="image2" value="alien"/>
-                                    <userDefinedRuntimeAttribute type="image" keyPath="image3" value="bear"/>
-                                    <userDefinedRuntimeAttribute type="image" keyPath="image4" value="danphone"/>
-                                    <userDefinedRuntimeAttribute type="image" keyPath="image5" value="dog"/>
-                                    <userDefinedRuntimeAttribute type="image" keyPath="rImage1" value="Ghost"/>
-                                    <userDefinedRuntimeAttribute type="image" keyPath="rImage2" value="Ghost"/>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="imageSize">
-                                        <real key="value" value="10"/>
-                                    </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.50196081399917603" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="bSG-uF-tro" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="-21" id="4cV-Vc-ior"/>
+                            <constraint firstItem="bSG-uF-tro" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="-25.5" id="4cV-Vc-ior"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="7fq-mt-2jT" secondAttribute="bottom" constant="93" id="DKM-LG-0am"/>
-                            <constraint firstItem="7fq-mt-2jT" firstAttribute="top" secondItem="bSG-uF-tro" secondAttribute="bottom" constant="59" id="OcM-eT-gUC"/>
-                            <constraint firstItem="7fq-mt-2jT" firstAttribute="centerX" secondItem="bSG-uF-tro" secondAttribute="centerX" constant="1" id="sax-gb-Ln0"/>
-                            <constraint firstItem="bSG-uF-tro" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" constant="-0.5" id="w3C-nl-azJ"/>
+                            <constraint firstItem="7fq-mt-2jT" firstAttribute="top" secondItem="bSG-uF-tro" secondAttribute="bottom" constant="58" id="OcM-eT-gUC"/>
+                            <constraint firstItem="7fq-mt-2jT" firstAttribute="centerX" secondItem="bSG-uF-tro" secondAttribute="centerX" constant="0.5" id="sax-gb-Ln0"/>
+                            <constraint firstItem="bSG-uF-tro" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="w3C-nl-azJ"/>
                         </constraints>
                     </view>
                     <connections>
@@ -103,6 +85,6 @@
         <image name="bear" width="220" height="230"/>
         <image name="danphone" width="99" height="134"/>
         <image name="dog" width="360" height="360"/>
-        <image name="peace" width="160" height="160"/>
+        <image name="monkey" width="620" height="648"/>
     </resources>
 </document>

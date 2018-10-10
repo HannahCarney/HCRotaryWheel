@@ -82,7 +82,7 @@ HCRotaryWheel *wheel;
     wheel.background = _background;
     
     [_background set];
-    
+ 
     imageArray = [NSMutableArray array];
     sectorArray = [NSMutableArray array];
     // Draw wheel
@@ -111,11 +111,18 @@ HCRotaryWheel *wheel;
         int halfOfRadius = radiusOfBigCircle/2;
         double tanAngle = cos(radiansOfAngle);
         double first = (1.0f / halfOfRadius);
-        float radiusOfLittleCircle = 1.0f / (tanAngle * first);
-        double iconSize = (radiusOfLittleCircle * 2/3) + self.imageSize;
-        int height = radiusOfBigCircle/4;
-        im.backgroundColor = [UIColor redColor];
-        self.sectorView = [[RotaryImageView alloc] initWithFrame: CGRectMake(radiusOfBigCircle - iconSize - height,radiusOfBigCircle - iconSize - height, iconSize, iconSize)];
+        
+        [self addOutlineforCircle:radiusOfBigCircle andX:0];
+//        if (!self.imageSize) {
+        float iconSize = (radiusOfBigCircle * 2/3) + self.imageSize;
+        float radiusOfLittleCircle = radiusOfBigCircle - iconSize;
+//        }
+////        + self.imageSize;
+//        int distanceBetweenCircleAndSquare =
+//        int height = radiusOfBigCircle/4;
+////        radiusOfLittleCircle = radiusOfLittleCircle - iconSize;
+        [self addOutlineforCircle:radiusOfLittleCircle andX:radiusOfBigCircle - radiusOfLittleCircle];
+         self.sectorView = [[RotaryImageView alloc] initWithFrame: CGRectMake(radiusOfBigCircle - iconSize ,radiusOfBigCircle - iconSize, iconSize, iconSize)];
         self.sectorView.transform = CGAffineTransformMakeRotation(-1 * (angleSize*i + .8));
         [im addSubview:self.sectorView];
         [imageArray addObject:self.sectorView];
@@ -128,7 +135,8 @@ HCRotaryWheel *wheel;
             rotaryNameValue = [rotaryNameValue imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
         }
         [self.sectorView setValue:rotaryNameValue forKey:@"image"];
-        [self.sectorView setValue:rotaryColorValue forKey:@"tintColor"];
+//        [self.sectorView setValue:rotaryColorValue forKey:@"tintColor"];
+         [self.sectorView setValue:rotaryColorValue forKey:@"backgroundColor"];
         if (i == 0) {
             im.alpha = self.maxAlphavalue;
             if (turnOnColorForCurrent) {
@@ -169,6 +177,15 @@ HCRotaryWheel *wheel;
     UIGraphicsEndImageContext();
 }
 
+
+-(void)addOutlineforCircle:(float)circle andX:(float)starting{
+    CAShapeLayer *circleLayer = [CAShapeLayer layer];
+    [circleLayer setPath:[[UIBezierPath bezierPathWithOvalInRect:CGRectMake(starting, starting, circle * 2, circle * 2)] CGPath]];
+    [circleLayer setStrokeColor:[[UIColor redColor] CGColor]];
+    [circleLayer setFillColor:[[UIColor clearColor] CGColor]];
+    [[self layer] addSublayer:circleLayer];
+
+}
 
 -(void)startTimer
 {
