@@ -64,11 +64,12 @@ IB_DESIGNABLE
 @property (nonatomic) IBInspectable BOOL sectorLines;
 @property (nonatomic) IBInspectable BOOL outerCircle;
 @property (nonatomic) IBInspectable BOOL innerCircle;
-@property (nonatomic) IBInspectable BOOL sectionColor;
+@property (nonatomic) IBInspectable UIColor *sectionColor;
+@property (nonatomic) IBInspectable UIColor *backgroundSectionColor;
 
 @property (nonatomic) BOOL timerDoesExist;
 @property (nonatomic) BOOL turnOnColorForCurrent;
-@property (nonatomic) UIColor* colorForCurrent;
+@property (nonatomic) UIColor *colorForCurrent;
 -(void)rotate;
 -(void)getPlacement;
 -(void)stopTimer;
