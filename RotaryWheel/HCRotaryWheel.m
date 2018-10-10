@@ -105,17 +105,17 @@ HCRotaryWheel *wheel;
         im.layer.borderWidth = 1;
         im.backgroundColor = [UIColor purpleColor];
         
-        UIImageView *v = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 1, 100)];
+        UIImageView *v = [[UIImageView alloc] initWithFrame:CGRectMake(70, 70, 1, 100)];
         v.layer.anchorPoint = CGPointMake(0, 0);
         v.layer.position = CGPointMake(container.bounds.size.width/2.0-container.frame.origin.x,
                                         container.bounds.size.height/2.0-container.frame.origin.y);
         
         v.transform = CGAffineTransformMakeRotation(((angleSize * i) + angleSize/2));
-        v.alpha = self.minAlphavalue;
 
-        v.layer.borderColor = [[UIColor redColor] CGColor];
-        v.layer.borderWidth = 1;
-        v.backgroundColor = [UIColor purpleColor];
+//        v.layer.borderColor = [[UIColor redColor] CGColor];
+//        v.layer.borderWidth = 1;
+//        v.backgroundColor = [UIColor purpleColor];
+      
         
     
         
@@ -135,7 +135,7 @@ HCRotaryWheel *wheel;
         //circle icons
         [im.layer addSublayer:[self addOutlineforCircle:hypotenuseOfIcon/2 andX: radiusOfLittleCircle - ((hypotenuseOfIcon - iconHeight)/2) andY: radiusOfLittleCircle - ((hypotenuseOfIcon - iconHeight)/2)]];
 //        //seperators
-//        [im.layer addSublayer:[self addOutlineforSeperator:hypotenuseOfLittleCircle:radiusOfBigCircle: hypotenuseOfIcon]];
+         [v.layer addSublayer:[self addOutlineforSeperator:hypotenuseOfLittleCircle:radiusOfBigCircle: hypotenuseOfIcon]];
         self.sectorView = [[RotaryImageView alloc] initWithFrame: CGRectMake(radiusOfLittleCircle, radiusOfLittleCircle, iconHeight, iconHeight)];
         self.sectorView.transform = CGAffineTransformMakeRotation(-1 * (angleSize*i + .8));
         [im addSubview:self.sectorView];
