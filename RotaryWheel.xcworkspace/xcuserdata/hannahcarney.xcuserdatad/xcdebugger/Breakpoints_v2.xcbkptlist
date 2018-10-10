@@ -36,11 +36,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "RotaryWheel/HCRotaryWheel.m"
-            timestampString = "560841009.392547"
+            timestampString = "560845449.090346"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "118"
-            endingLineNumber = "118"
+            startingLineNumber = "120"
+            endingLineNumber = "120"
             landmarkName = "-drawRect:"
             landmarkType = "7">
          </BreakpointContent>
@@ -57,8 +57,10 @@
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
+                  symbolName = "data"
+                  moduleName = "libMainThreadChecker.dylib"
                   usesParentBreakpointCondition = "Yes"
-                  offsetFromSymbolStart = "0">
+                  offsetFromSymbolStart = "1030557">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -70,11 +72,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "RotaryWheel/HCRotaryWheel.m"
-            timestampString = "560841009.392971"
+            timestampString = "560845449.09113"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "224"
-            endingLineNumber = "224"
+            startingLineNumber = "236"
+            endingLineNumber = "236"
             landmarkName = "-startTimer"
             landmarkType = "7">
          </BreakpointContent>
@@ -86,11 +88,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "RotaryWheel/HCRotaryWheel.m"
-            timestampString = "560841009.393443"
+            timestampString = "560845449.091566"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "226"
-            endingLineNumber = "226"
+            startingLineNumber = "238"
+            endingLineNumber = "238"
             landmarkName = "-startTimer"
             landmarkType = "7">
          </BreakpointContent>
@@ -102,11 +104,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "RotaryWheel/HCRotaryWheel.m"
-            timestampString = "560841009.3938839"
+            timestampString = "560845449.092"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "225"
-            endingLineNumber = "225"
+            startingLineNumber = "237"
+            endingLineNumber = "237"
             landmarkName = "-startTimer"
             landmarkType = "7">
          </BreakpointContent>
@@ -118,11 +120,75 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "RotaryWheel/HCRotaryWheel.m"
-            timestampString = "560841009.39422"
+            timestampString = "560845449.0924439"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "124"
-            endingLineNumber = "124"
+            startingLineNumber = "99"
+            endingLineNumber = "99"
+            landmarkName = "-drawRect:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "RotaryWheel/HCRotaryWheel.m"
+            timestampString = "560845449.092793"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "126"
+            endingLineNumber = "126"
+            landmarkName = "-drawRect:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "RotaryWheel/HCRotaryWheel.m"
+            timestampString = "560845449.093123"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "191"
+            endingLineNumber = "191"
+            landmarkName = "-calculteDistanceBetweenRadius:andIconWidth:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "RotaryWheel/HCRotaryWheel.m"
+            timestampString = "560845449.093453"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "125"
+            endingLineNumber = "125"
+            landmarkName = "-drawRect:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "RotaryWheel/HCRotaryWheel.m"
+            timestampString = "560845449.093775"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "100"
+            endingLineNumber = "100"
             landmarkName = "-drawRect:"
             landmarkType = "7">
          </BreakpointContent>

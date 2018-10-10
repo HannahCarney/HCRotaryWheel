@@ -77,7 +77,7 @@ HCRotaryWheel *wheel;
     // Draw for interface builder
     CGContextRef context = UIGraphicsGetCurrentContext();
     
-    CGRect myFrame = CGRectMake(rect.origin.x, rect.origin.y, rect.size.width, rect.size.width);
+    CGRect myFrame = CGRectMake(rect.origin.x, rect.origin.y, rect.size.width, rect.size.height);
     
     wheel.background = _background;
     
@@ -97,10 +97,12 @@ HCRotaryWheel *wheel;
         UIImageView *im = [[UIImageView alloc] init];
         im.layer.anchorPoint = CGPointMake(0, 0);
         im.layer.position = CGPointMake(container.bounds.size.width/2.0-container.frame.origin.x,
-                                        container.bounds.size.width/2.0-container.frame.origin.x);
+                                        container.bounds.size.height/2.0-container.frame.origin.y);
         im.transform = CGAffineTransformMakeRotation(angleSize*i + .8);
         im.alpha = self.minAlphavalue;
+        
         im.tag = i;
+
         // Set sector image
         double degrees = (360/(int)self.numberOfSections)/2;
         if (degrees >= 90){
@@ -117,12 +119,16 @@ HCRotaryWheel *wheel;
 
         float iconSize = (radiusOfBigCircle * 2/3) + self.imageSize;
         float radiusOfLittleCircle = radiusOfBigCircle - [self getHypotenuse:iconSize];
-
+//        degreesOfStarting = degrees/2;
 //        int height = rect.size.height - radiusOfBigCircle * 2;
         [self addOutlineforCircle:radiusOfLittleCircle andX:radiusOfBigCircle - radiusOfLittleCircle];
-        float startingValueOfSectorCircle = [self calculteDistanceBetweenRadius:radiusOfBigCircle andframe:rect.size.width];
-         [self addOutlineforSquare:iconSize/2 andX:startingValueOfSectorCircle];
-         self.sectorView = [[RotaryImageView alloc] initWithFrame: CGRectMake(startingValueOfSectorCircle, startingValueOfSectorCircle, iconSize, iconSize)];
+        float startingValueOfSectorCircle = [self calculteDistanceBetweenRadius:radiusOfBigCircle andIconWidth:iconSize];
+        [im.layer addSublayer:         [self addOutlineforSquare:iconSize/2 andX:radiusOfLittleCircle]
+     
+];
+//        im.frame = startingValueOfSectorCircle;
+
+         self.sectorView = [[RotaryImageView alloc] initWithFrame: CGRectMake(radiusOfLittleCircle, radiusOfLittleCircle, iconSize, iconSize)];
         self.sectorView.layer.cornerRadius = iconSize/2;
         self.sectorView.transform = CGAffineTransformMakeRotation(-1 * (angleSize*i + .8));
         [im addSubview:self.sectorView];
@@ -179,11 +185,17 @@ HCRotaryWheel *wheel;
 }
 
 //subtract radius from 1/2 hypotenuse to get the hypotenue of triange between radius and frame
--(float)calculteDistanceBetweenRadius:(float)radius andframe:(float)widthOfFrame {
-    float hypotenuseOfFrame = [self getHypotenuse:widthOfFrame];
-    float hypotenuseMinusRadius = hypotenuseOfFrame/2 - radius;
-    float distanceForFrameOfSector = [self getSideOfTriangle:hypotenuseMinusRadius];
-    return distanceForFrameOfSector;
+-(float)calculteDistanceBetweenRadius:(float)radius andIconWidth:(float)size{
+    
+    
+    float hypotenusOfIcon = [self getHypotenuse:size];
+    //check little rad + hypotemus == radius here
+    
+//    float hypotenuseOfFrame = [self getHypotenuse:radius/2];
+//    float hypotenuseMinusRadius = hypotenuseOfFrame - radius;
+//    float distanceForFrameOfSector = [self getSideOfTriangle:hypotenuseMinusRadius];
+//    return distanceForFrameOfSector;
+    return hypotenusOfIcon;
 }
 
 //hypotenuse of equalateral triangle is squareroot of 2 times the length of one leg
@@ -209,12 +221,12 @@ HCRotaryWheel *wheel;
 
 }
 
--(void)addOutlineforSquare:(float)circle andX:(float)starting{
+-(CAShapeLayer *)addOutlineforSquare:(float)circle andX:(float)starting{
     CAShapeLayer *circleLayer = [CAShapeLayer layer];
     [circleLayer setPath:[[UIBezierPath bezierPathWithRect:CGRectMake(starting, starting, circle * 2, circle * 2)] CGPath]];
     [circleLayer setStrokeColor:[[UIColor redColor] CGColor]];
     [circleLayer setFillColor:[[UIColor clearColor] CGColor]];
-    [[self layer] addSublayer:circleLayer];
+    return circleLayer;
     
 }
 
