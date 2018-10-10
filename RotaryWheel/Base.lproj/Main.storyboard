@@ -49,7 +49,7 @@
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="image" keyPath="image2" value="view:bSG-uF-tro:value"/>
                                     <userDefinedRuntimeAttribute type="image" keyPath="image3" value="dog"/>
-                                    <userDefinedRuntimeAttribute type="image" keyPath="image4" value="62989158-694E-423D-B855-53F34DEE39E5"/>
+                                    <userDefinedRuntimeAttribute type="image" keyPath="image4" value="875601D5-F700-46EF-8325-936AF2547FEA"/>
                                     <userDefinedRuntimeAttribute type="image" keyPath="image5" value="peace"/>
                                     <userDefinedRuntimeAttribute type="image" keyPath="image6" value="dog"/>
                                     <userDefinedRuntimeAttribute type="number" keyPath="numberOfSections">
@@ -58,7 +58,7 @@
                                     <userDefinedRuntimeAttribute type="color" keyPath="color1">
                                         <color key="value" red="0.66799789669999998" green="0.47512125970000002" blue="0.25860109930000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="image" keyPath="image1" value="62989158-694E-423D-B855-53F34DEE39E5"/>
+                                    <userDefinedRuntimeAttribute type="image" keyPath="image1" value="875601D5-F700-46EF-8325-936AF2547FEA"/>
                                     <userDefinedRuntimeAttribute type="color" keyPath="color4">
                                         <color key="value" red="0.0" green="0.97680455450000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </userDefinedRuntimeAttribute>
@@ -71,14 +71,14 @@
                                     <userDefinedRuntimeAttribute type="color" keyPath="sectionColor">
                                         <color key="value" red="0.0" green="0.97680455450000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="boolean" keyPath="dropShadow" value="NO"/>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="dropShadow" value="YES"/>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="circleIcons" value="NO"/>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="squareIcons" value="NO"/>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="sectorLines" value="NO"/>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="outerCircle" value="NO"/>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="innerCircle" value="NO"/>
                                     <userDefinedRuntimeAttribute type="number" keyPath="imageSize">
-                                        <real key="value" value="10"/>
+                                        <real key="value" value="8"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="color" keyPath="background">
                                         <color key="value" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -106,7 +106,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="62989158-694E-423D-B855-53F34DEE39E5" width="220" height="230">
+        <image name="875601D5-F700-46EF-8325-936AF2547FEA" width="220" height="230">
             <mutableData key="keyedArchiveRepresentation">
 YnBsaXN0MDDUAQIDBAUGUlNYJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK8QEQcI
 ERYbHCAhKCsuOEBESExPVSRudWxs1AkKCwwNDg8QViRjbGFzc1xOU0ltYWdlRmxhZ3NWTlNSZXBzV05T

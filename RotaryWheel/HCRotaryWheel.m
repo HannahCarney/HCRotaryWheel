@@ -262,8 +262,9 @@ HCRotaryWheel *wheel;
 {
     self.sectorView.layer.shadowColor = [UIColor blackColor].CGColor;
     self.sectorView.backgroundColor = [UIColor whiteColor];
-    self.sectorView.layer.masksToBounds = true;
-    self.sectorView.layer.cornerRadius = imageView.layer.frame.size.width/2;
+//    self.sectorView.layer.masksToBounds = true;
+    self.sectorView.layer.cornerRadius = imageView.layer.bounds.size.width/2;
+    self.sectorView.clipsToBounds = TRUE;
     self.sectorView.layer.shadowOpacity = 0.3;
     self.sectorView.layer.shadowRadius = 1;
     self.sectorView.layer.shadowOffset = CGSizeMake(0.0f, 2.0f);
