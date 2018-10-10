@@ -110,7 +110,7 @@ HCRotaryWheel *wheel;
         v.layer.position = CGPointMake(container.bounds.size.width/2.0-container.frame.origin.x,
                                         container.bounds.size.height/2.0-container.frame.origin.y);
         
-        v.transform = CGAffineTransformMakeRotation((angleSize * i) + angleSize + .8);
+        v.transform = CGAffineTransformMakeRotation(((angleSize * i) + angleSize/2));
         v.alpha = self.minAlphavalue;
 
         v.layer.borderColor = [[UIColor redColor] CGColor];
