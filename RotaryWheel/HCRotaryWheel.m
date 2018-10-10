@@ -59,8 +59,8 @@ HCRotaryWheel *wheel;
 //    self.backgroundColor = [UIColor clearColor];
     self.layer.contentsScale = [UIScreen mainScreen].scale;
     self.numberOfSections = 6;
-    self.minAlphavalue = 1.0;
-    self.maxAlphavalue = 1.0;
+//    self.minAlphavalue = 1.0;
+//    self.maxAlphavalue = 1.0;
     self.sectionColor = [UIColor redColor];
     [[NSNotificationCenter defaultCenter]
      addObserver:self

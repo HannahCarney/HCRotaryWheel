@@ -18,7 +18,7 @@
 }
 
 static float deltaAngle;
-static float minAlphavalue = 0.6;
+//static float minAlphavalue = 0.6;
 
 @synthesize startTransform;
 
@@ -64,7 +64,7 @@ static float minAlphavalue = 0.6;
     
     // 5 - Set current sector's alpha value to the minimum value
     UIImageView *im = [self getSectorByValue:wheel.currentSector];
-    im.alpha = minAlphavalue;
+    im.alpha = wheel.minAlphavalue;
     return YES;
 }
 
@@ -102,7 +102,7 @@ static float minAlphavalue = 0.6;
     {
         [UIView animateWithDuration:0.6 delay:0 options:UIViewAnimationOptionCurveEaseInOut animations:^{
             UIImageView *im = [self getSectorByValue:wheel.currentSector];
-            im.alpha = minAlphavalue;
+            im.alpha =  wheel.minAlphavalue;
             CGAffineTransform t = CGAffineTransformRotate(wheel.container.transform, 1.047 - ang + .683);
             wheel.container.transform = t;
             for (RotaryImageView *view in imArray)
