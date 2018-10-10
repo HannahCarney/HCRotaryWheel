@@ -55,7 +55,8 @@ HCRotaryWheel *wheel;
 -(void)initialSetup
 {
     currentSector = 0;
-    _background = [UIColor clearColor];
+//    _background = [UIColor clearColor];
+//    self.backgroundColor = [UIColor clearColor];
     self.layer.contentsScale = [UIScreen mainScreen].scale;
     self.numberOfSections = 6;
     self.minAlphavalue = 1.0;
@@ -81,9 +82,11 @@ HCRotaryWheel *wheel;
     
     CGRect myFrame = CGRectMake(rect.origin.x, rect.origin.y, rect.size.width, rect.size.width);
     
-    wheel.background = _background;
-    
-    [_background set];
+    //DrawBackground
+    CGRect bottomRect = CGRectMake(0, rect.size.height/2.0, rect.size.width, rect.size.height/2.0);
+    [self.backgroundColor setFill];
+    UIRectFill( bottomRect );
+
     
     imageArray = [NSMutableArray array];
     sectorArray = [NSMutableArray array];
@@ -213,7 +216,7 @@ HCRotaryWheel *wheel;
     CAShapeLayer *circleLayer = [CAShapeLayer layer];
     [circleLayer setPath:[[UIBezierPath bezierPathWithOvalInRect:CGRectMake(xValue, yValue, circle * 2, circle * 2)] CGPath]];
     [circleLayer setStrokeColor:[self.sectionColor CGColor]];
-    [circleLayer setFillColor:[[UIColor clearColor] CGColor]];
+//    [circleLayer setFillColor:[[UIColor clearColor] CGColor]];
     return circleLayer;
 }
 
@@ -221,7 +224,7 @@ HCRotaryWheel *wheel;
     CAShapeLayer *squareLayer = [CAShapeLayer layer];
     [squareLayer setPath:[[UIBezierPath bezierPathWithRect:CGRectMake(starting, starting, width, width)] CGPath]];
     squareLayer.strokeColor = [self.sectionColor CGColor];
-    squareLayer.fillColor = [[UIColor clearColor] CGColor];
+//    squareLayer.fillColor = [[UIColor clearColor] CGColor];
     return squareLayer;
 }
 
@@ -232,7 +235,7 @@ HCRotaryWheel *wheel;
     CAShapeLayer *lineLayer = [CAShapeLayer layer];
     lineLayer.path = [path CGPath];
     lineLayer.strokeColor = [self.sectionColor CGColor];
-    lineLayer.fillColor = [[UIColor clearColor] CGColor];
+//    lineLayer.fillColor = [[UIColor clearColor] CGColor];
     return lineLayer;
 }
 

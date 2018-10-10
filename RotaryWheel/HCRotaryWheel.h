@@ -21,7 +21,6 @@ IB_DESIGNABLE
 @interface HCRotaryWheel : UIView
 
 @property (weak) id <RotaryProtocol> delegate;
-@property (nonatomic, strong) IBInspectable UIColor* background;
 @property (nonatomic) IBInspectable int numberOfSections;
 @property (nonatomic) IBInspectable float imageSize;
 @property (nonatomic) IBInspectable CGFloat minAlphavalue;
