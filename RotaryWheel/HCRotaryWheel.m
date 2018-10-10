@@ -102,6 +102,7 @@ HCRotaryWheel *wheel;
         im.alpha = self.minAlphavalue;
         
         im.tag = i;
+        
 
         // Set sectors
         float degrees = (360/(int)self.numberOfSections)/2;
@@ -122,15 +123,14 @@ HCRotaryWheel *wheel;
         [im.layer addSublayer:[self addOutlineforSquare:iconHeight  andX:radiusOfLittleCircle]];
         float hypotenuseOfIcon = [self getHypotenuse:iconHeight];
         //circle icons
-        float hypotenuseOfCirlceIcon = [self getHypotenuse:hypotenuseOfIcon];
-              float hypotenuseOfBigCircle = [self getHypotenuse:radiusOfBigCircle];
-        float subtractRadiusFromHypot = (hypotenuseOfCirlceIcon - hypotenuseOfIcon)/4;
-        float x = hypotenuseOfCirlceIcon/2 - hypotenuseOfIcon;
         [im.layer addSublayer:[self addOutlineforCircle:hypotenuseOfIcon/2 andX: radiusOfLittleCircle - ((hypotenuseOfIcon - iconHeight)/2) andY: radiusOfLittleCircle - ((hypotenuseOfIcon - iconHeight)/2)]];
-
+//        //seperators
+//        [im.layer addSublayer:[self addOutlineforSeperator:radiusOfLittleCircle:iconHeight:hypotenuseOfIcon]];
         self.sectorView = [[RotaryImageView alloc] initWithFrame: CGRectMake(radiusOfLittleCircle, radiusOfLittleCircle, iconHeight, iconHeight)];
         self.sectorView.transform = CGAffineTransformMakeRotation(-1 * (angleSize*i + .8));
         [im addSubview:self.sectorView];
+        [self.sectorView.layer addSublayer:[self addOutlineforSeperator]];
+
         [imageArray addObject:self.sectorView];
         NSString *rotaryName = [NSString stringWithFormat:@"image%d", i + 1];
         NSString *rotaryColor = [NSString stringWithFormat:@"color%d",i + 1];
@@ -182,20 +182,6 @@ HCRotaryWheel *wheel;
     UIGraphicsEndImageContext();
 }
 
-//subtract radius from 1/2 hypotenuse to get the hypotenue of triange between radius and frame
--(float)calculteDistanceBetweenRadius:(float)radius andIconWidth:(float)size{
-    
-    
-    float hypotenusOfIcon = [self getHypotenuse:size];
-    //check little rad + hypotemus == radius here
-    
-//    float hypotenuseOfFrame = [self getHypotenuse:radius/2];
-//    float hypotenuseMinusRadius = hypotenuseOfFrame - radius;
-//    float distanceForFrameOfSector = [self getSideOfTriangle:hypotenuseMinusRadius];
-//    return distanceForFrameOfSector;
-    return hypotenusOfIcon;
-}
-
 //hypotenuse of equalateral triangle is squareroot of 2 times the length of one leg
 -(float)getHypotenuse:(float)side {
     return sqrt(2) * side;
@@ -215,13 +201,38 @@ HCRotaryWheel *wheel;
     return circleLayer;
 }
 
--(CAShapeLayer *)addOutlineforSquare:(float)circle andX:(float)starting{
-    CAShapeLayer *circleLayer = [CAShapeLayer layer];
-    [circleLayer setPath:[[UIBezierPath bezierPathWithRect:CGRectMake(starting, starting, circle, circle)] CGPath]];
-    [circleLayer setStrokeColor:[[UIColor redColor] CGColor]];
-    [circleLayer setFillColor:[[UIColor clearColor] CGColor]];
-    return circleLayer;
-    
+-(CAShapeLayer *)addOutlineforSquare:(float)width andX:(float)starting{
+    CAShapeLayer *squareLayer = [CAShapeLayer layer];
+    [squareLayer setPath:[[UIBezierPath bezierPathWithRect:CGRectMake(starting, starting, width, width)] CGPath]];
+    [squareLayer setStrokeColor:[[UIColor redColor] CGColor]];
+    [squareLayer setFillColor:[[UIColor clearColor] CGColor]];
+    return squareLayer;
+}
+
+-(CAShapeLayer *)addOutlineforSeperator:(float)radiusOfSmallCircle :(float)radiusOfBigCircle :(float)iconSize {
+    UIBezierPath *path = [UIBezierPath bezierPath];
+    [path moveToPoint:CGPointMake(0, 0)];
+//    [path moveToPoint:CGPointMake(radiusOfSmallCircle, radiusOfSmallCircle)];
+    [path addLineToPoint:CGPointMake(iconSize, 110.0)];
+    CAShapeLayer *lineLayer = [CAShapeLayer layer];
+    lineLayer.path = [path CGPath];
+    lineLayer.strokeColor = [[UIColor blueColor] CGColor];
+    lineLayer.lineWidth = 1.0;
+    lineLayer.fillColor = [[UIColor clearColor] CGColor];
+    return lineLayer;
+}
+
+-(CAShapeLayer *)addOutlineforSeperator {
+    UIBezierPath *path = [UIBezierPath bezierPath];
+    [path moveToPoint:CGPointMake(0, 0)];
+    //    [path moveToPoint:CGPointMake(radiusOfSmallCircle, radiusOfSmallCircle)];
+    [path addLineToPoint:CGPointMake(0, 110.0)];
+    CAShapeLayer *lineLayer = [CAShapeLayer layer];
+    lineLayer.path = [path CGPath];
+    lineLayer.strokeColor = [[UIColor blueColor] CGColor];
+    lineLayer.lineWidth = 1.0;
+    lineLayer.fillColor = [[UIColor clearColor] CGColor];
+    return lineLayer;
 }
 
 
