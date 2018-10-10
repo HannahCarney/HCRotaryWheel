@@ -107,22 +107,23 @@ HCRotaryWheel *wheel;
             degrees = 60;
         }
         double radiansOfAngle = (degrees) * M_PI/180;
-        int radiusOfBigCircle = rect.size.width/2;
-        int halfOfRadius = radiusOfBigCircle/2;
+        float diameterOfBigCircle = rect.size.width;
+        float radiusOfBigCircle = rect.size.width/2;
+        float halfOfRadius = radiusOfBigCircle/2;
         double tanAngle = cos(radiansOfAngle);
         double first = (1.0f / halfOfRadius);
         
         [self addOutlineforCircle:radiusOfBigCircle andX:0];
-//        if (!self.imageSize) {
+
         float iconSize = (radiusOfBigCircle * 2/3) + self.imageSize;
-        float radiusOfLittleCircle = radiusOfBigCircle - iconSize;
-//        }
-////        + self.imageSize;
-//        int distanceBetweenCircleAndSquare =
-//        int height = radiusOfBigCircle/4;
-////        radiusOfLittleCircle = radiusOfLittleCircle - iconSize;
+        float radiusOfLittleCircle = radiusOfBigCircle - [self getHypotenuse:iconSize];
+
+//        int height = rect.size.height - radiusOfBigCircle * 2;
         [self addOutlineforCircle:radiusOfLittleCircle andX:radiusOfBigCircle - radiusOfLittleCircle];
-         self.sectorView = [[RotaryImageView alloc] initWithFrame: CGRectMake(radiusOfBigCircle - iconSize ,radiusOfBigCircle - iconSize, iconSize, iconSize)];
+        float startingValueOfSectorCircle = [self calculteDistanceBetweenRadius:radiusOfBigCircle andframe:rect.size.width];
+         [self addOutlineforSquare:iconSize/2 andX:startingValueOfSectorCircle];
+         self.sectorView = [[RotaryImageView alloc] initWithFrame: CGRectMake(startingValueOfSectorCircle, startingValueOfSectorCircle, iconSize, iconSize)];
+        self.sectorView.layer.cornerRadius = iconSize/2;
         self.sectorView.transform = CGAffineTransformMakeRotation(-1 * (angleSize*i + .8));
         [im addSubview:self.sectorView];
         [imageArray addObject:self.sectorView];
@@ -177,7 +178,28 @@ HCRotaryWheel *wheel;
     UIGraphicsEndImageContext();
 }
 
+//subtract radius from 1/2 hypotenuse to get the hypotenue of triange between radius and frame
+-(float)calculteDistanceBetweenRadius:(float)radius andframe:(float)widthOfFrame {
+    float hypotenuseOfFrame = [self getHypotenuse:widthOfFrame];
+    float hypotenuseMinusRadius = hypotenuseOfFrame/2 - radius;
+    float distanceForFrameOfSector = [self getSideOfTriangle:hypotenuseMinusRadius];
+    return distanceForFrameOfSector;
+}
 
+//hypotenuse of equalateral triangle is squareroot of 2 times the length of one leg
+-(float)getHypotenuse:(float)side {
+    return sqrt(2) * side;
+}
+
+//get side of equalateral triangle knowing the hypotenuse
+-(float)getSideOfTriangle:(float)hypotenuse{
+    return hypotenuse / sqrt(2);
+}
+
+////find difference between circle insie rect and rect
+//-(float)circleInsideSquare {
+//
+//}
 -(void)addOutlineforCircle:(float)circle andX:(float)starting{
     CAShapeLayer *circleLayer = [CAShapeLayer layer];
     [circleLayer setPath:[[UIBezierPath bezierPathWithOvalInRect:CGRectMake(starting, starting, circle * 2, circle * 2)] CGPath]];
@@ -186,6 +208,16 @@ HCRotaryWheel *wheel;
     [[self layer] addSublayer:circleLayer];
 
 }
+
+-(void)addOutlineforSquare:(float)circle andX:(float)starting{
+    CAShapeLayer *circleLayer = [CAShapeLayer layer];
+    [circleLayer setPath:[[UIBezierPath bezierPathWithRect:CGRectMake(starting, starting, circle * 2, circle * 2)] CGPath]];
+    [circleLayer setStrokeColor:[[UIColor redColor] CGColor]];
+    [circleLayer setFillColor:[[UIColor clearColor] CGColor]];
+    [[self layer] addSublayer:circleLayer];
+    
+}
+
 
 -(void)startTimer
 {
