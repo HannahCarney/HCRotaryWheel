@@ -98,6 +98,7 @@ HCRotaryWheel *wheel;
         im.layer.anchorPoint = CGPointMake(0, 0);
         im.layer.position = CGPointMake(container.bounds.size.width/2.0-container.frame.origin.x,
                                         container.bounds.size.height/2.0-container.frame.origin.y);
+
         im.transform = CGAffineTransformMakeRotation(angleSize*i + .8);
         im.alpha = self.minAlphavalue;
         
@@ -125,11 +126,10 @@ HCRotaryWheel *wheel;
         //circle icons
         [im.layer addSublayer:[self addOutlineforCircle:hypotenuseOfIcon/2 andX: radiusOfLittleCircle - ((hypotenuseOfIcon - iconHeight)/2) andY: radiusOfLittleCircle - ((hypotenuseOfIcon - iconHeight)/2)]];
 //        //seperators
-//        [im.layer addSublayer:[self addOutlineforSeperator:radiusOfLittleCircle:iconHeight:hypotenuseOfIcon]];
+        [im.layer addSublayer:[self addOutlineforSeperator:hypotenuseOfLittleCircle:radiusOfBigCircle: hypotenuseOfIcon]];
         self.sectorView = [[RotaryImageView alloc] initWithFrame: CGRectMake(radiusOfLittleCircle, radiusOfLittleCircle, iconHeight, iconHeight)];
         self.sectorView.transform = CGAffineTransformMakeRotation(-1 * (angleSize*i + .8));
         [im addSubview:self.sectorView];
-        [self.sectorView.layer addSublayer:[self addOutlineforSeperator]];
 
         [imageArray addObject:self.sectorView];
         NSString *rotaryName = [NSString stringWithFormat:@"image%d", i + 1];
@@ -211,10 +211,13 @@ HCRotaryWheel *wheel;
 
 -(CAShapeLayer *)addOutlineforSeperator:(float)radiusOfSmallCircle :(float)radiusOfBigCircle :(float)iconSize {
     UIBezierPath *path = [UIBezierPath bezierPath];
-    [path moveToPoint:CGPointMake(0, 0)];
-//    [path moveToPoint:CGPointMake(radiusOfSmallCircle, radiusOfSmallCircle)];
-    [path addLineToPoint:CGPointMake(iconSize, 110.0)];
+    
+    [path moveToPoint:CGPointMake(0, radiusOfSmallCircle)];
+    //    [path moveToPoint:CGPointMake(radiusOfSmallCircle, radiusOfSmallCircle)];
+    
+    [path addLineToPoint:CGPointMake(0, radiusOfBigCircle)];
     CAShapeLayer *lineLayer = [CAShapeLayer layer];
+    //    lineLayer.transform = CATransform3DMakeRotation(0, 20, 20, 20);
     lineLayer.path = [path CGPath];
     lineLayer.strokeColor = [[UIColor blueColor] CGColor];
     lineLayer.lineWidth = 1.0;
@@ -222,18 +225,6 @@ HCRotaryWheel *wheel;
     return lineLayer;
 }
 
--(CAShapeLayer *)addOutlineforSeperator {
-    UIBezierPath *path = [UIBezierPath bezierPath];
-    [path moveToPoint:CGPointMake(0, 0)];
-    //    [path moveToPoint:CGPointMake(radiusOfSmallCircle, radiusOfSmallCircle)];
-    [path addLineToPoint:CGPointMake(0, 110.0)];
-    CAShapeLayer *lineLayer = [CAShapeLayer layer];
-    lineLayer.path = [path CGPath];
-    lineLayer.strokeColor = [[UIColor blueColor] CGColor];
-    lineLayer.lineWidth = 1.0;
-    lineLayer.fillColor = [[UIColor clearColor] CGColor];
-    return lineLayer;
-}
 
 
 -(void)startTimer
