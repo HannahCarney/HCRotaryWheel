@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -31,15 +32,16 @@
                                 <constraints>
                                     <constraint firstAttribute="width" constant="263" id="86J-p8-Qzu"/>
                                     <constraint firstAttribute="height" constant="271" id="GsO-Ta-88E"/>
+                                    <constraint firstAttribute="width" secondItem="bSG-uF-tro" secondAttribute="height" multiplier="263:271" id="Jjk-y5-PuB"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="image" keyPath="image2" value="bear"/>
-                                    <userDefinedRuntimeAttribute type="image" keyPath="image3" value="danphone"/>
-                                    <userDefinedRuntimeAttribute type="image" keyPath="image4" value="dog"/>
-                                    <userDefinedRuntimeAttribute type="image" keyPath="image5" value="alien"/>
-                                    <userDefinedRuntimeAttribute type="image" keyPath="image6" value="monkey"/>
+                                    <userDefinedRuntimeAttribute type="image" keyPath="image2" value="monkey"/>
+                                    <userDefinedRuntimeAttribute type="image" keyPath="image3" value="dog"/>
+                                    <userDefinedRuntimeAttribute type="image" keyPath="image4" value="Ghost"/>
+                                    <userDefinedRuntimeAttribute type="image" keyPath="image5" value="peace"/>
+                                    <userDefinedRuntimeAttribute type="image" keyPath="image6" value="alien"/>
                                     <userDefinedRuntimeAttribute type="number" keyPath="numberOfSections">
-                                        <integer key="value" value="11"/>
+                                        <integer key="value" value="6"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="color" keyPath="background">
                                         <color key="value" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -47,27 +49,24 @@
                                     <userDefinedRuntimeAttribute type="color" keyPath="color1">
                                         <color key="value" red="0.66799789669999998" green="0.47512125970000002" blue="0.25860109930000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="image" keyPath="image1" value="Ghost"/>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="color2">
-                                        <color key="value" red="0.0" green="0.97680455450000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="image" keyPath="image1" value="bear"/>
                                     <userDefinedRuntimeAttribute type="color" keyPath="color4">
                                         <color key="value" red="0.016804177310000001" green="0.19835099580000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="color3">
-                                        <color key="value" red="1" green="0.2527923882" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="imageSize">
-                                        <real key="value" value="-35"/>
-                                    </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="number" keyPath="minAlphavalue">
-                                        <real key="value" value="5"/>
+                                        <real key="value" value="2.2000000000000002"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="maxAlphavalue">
+                                        <real key="value" value="3"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7fq-mt-2jT">
                                 <rect key="frame" x="166" y="489" width="42" height="54"/>
                                 <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="54" id="8Q1-aa-3mR"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
@@ -78,7 +77,6 @@
                             <constraint firstItem="bSG-uF-tro" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="-111" id="4cV-Vc-ior"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="7fq-mt-2jT" secondAttribute="bottom" constant="124" id="DKM-LG-0am"/>
                             <constraint firstItem="bSG-uF-tro" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="40" id="OWH-77-wwr"/>
-                            <constraint firstItem="7fq-mt-2jT" firstAttribute="top" secondItem="bSG-uF-tro" secondAttribute="bottom" constant="131" id="OcM-eT-gUC"/>
                             <constraint firstAttribute="trailingMargin" secondItem="bSG-uF-tro" secondAttribute="trailing" constant="40" id="PtM-XV-ww8"/>
                             <constraint firstItem="7fq-mt-2jT" firstAttribute="centerX" secondItem="bSG-uF-tro" secondAttribute="centerX" constant="-0.5" id="sax-gb-Ln0"/>
                         </constraints>
@@ -97,8 +95,8 @@
         <image name="Ghost" width="269" height="247"/>
         <image name="alien" width="220" height="230"/>
         <image name="bear" width="220" height="230"/>
-        <image name="danphone" width="99" height="134"/>
         <image name="dog" width="360" height="360"/>
         <image name="monkey" width="620" height="648"/>
+        <image name="peace" width="160" height="160"/>
     </resources>
 </document>

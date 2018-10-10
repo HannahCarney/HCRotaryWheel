@@ -11,8 +11,6 @@
 #import "RotarySector.h"
 #import "RotaryWheelControl.h"
 
-#define DEGREES(radians) (radians * 180 / M_PI)
-
 @implementation HCRotaryWheel
 {
     NSMutableArray *imageArray;
@@ -30,9 +28,9 @@ HCRotaryWheel *wheel;
 @synthesize timer;
 @synthesize timerDoesExist;
 @synthesize imageSize;
-@synthesize turnOnDropShadow;
+@synthesize dropShadow;
 @synthesize turnOnColorForCurrent;
-@synthesize  colorForCurrent;
+@synthesize colorForCurrent;
 
 -(id)initWithCoder:(NSCoder *)aDecoder
 {
@@ -101,28 +99,18 @@ HCRotaryWheel *wheel;
 
         im.transform = CGAffineTransformMakeRotation(angleSize*i +.8);
         im.alpha = self.minAlphavalue;
-        im.layer.borderColor = [[UIColor redColor] CGColor];
-        im.layer.borderWidth = 1;
-        im.backgroundColor = [UIColor purpleColor];
         
-        UIImageView *v = [[UIImageView alloc] initWithFrame:CGRectMake(70, 70, 1, 100)];
+        UIView *v = [[UIView alloc] initWithFrame:rect];
         v.layer.anchorPoint = CGPointMake(0, 0);
         v.layer.position = CGPointMake(container.bounds.size.width/2.0-container.frame.origin.x,
                                         container.bounds.size.height/2.0-container.frame.origin.y);
         
         v.transform = CGAffineTransformMakeRotation(((angleSize * i) + angleSize/2));
-
-//        v.layer.borderColor = [[UIColor redColor] CGColor];
-//        v.layer.borderWidth = 1;
-//        v.backgroundColor = [UIColor purpleColor];
-      
-        
-    
         
         float radiusOfBigCircle = rect.size.width/2;
         //outer circle
         [[self layer] addSublayer:[self addOutlineforCircle:radiusOfBigCircle andX:0 andY:(rect.size.height - radiusOfBigCircle * 2)/2]];
-        float iconSize = (radiusOfBigCircle * 2/3) + self.imageSize;
+        float iconSize = (radiusOfBigCircle / 2) + self.imageSize;
         float radiusOfLittleCircle = radiusOfBigCircle - [self getHypotenuse:iconSize];
         float hypotenuseOfLittleCircle = [self getHypotenuse:radiusOfLittleCircle];
         //inner circle
@@ -134,7 +122,7 @@ HCRotaryWheel *wheel;
         float hypotenuseOfIcon = [self getHypotenuse:iconHeight];
         //circle icons
         [im.layer addSublayer:[self addOutlineforCircle:hypotenuseOfIcon/2 andX: radiusOfLittleCircle - ((hypotenuseOfIcon - iconHeight)/2) andY: radiusOfLittleCircle - ((hypotenuseOfIcon - iconHeight)/2)]];
-//        //seperators
+        //seperators
          [v.layer addSublayer:[self addOutlineforSeperator:hypotenuseOfLittleCircle:radiusOfBigCircle: hypotenuseOfIcon]];
         self.sectorView = [[RotaryImageView alloc] initWithFrame: CGRectMake(radiusOfLittleCircle, radiusOfLittleCircle, iconHeight, iconHeight)];
         self.sectorView.transform = CGAffineTransformMakeRotation(-1 * (angleSize*i + .8));
@@ -151,13 +139,12 @@ HCRotaryWheel *wheel;
         }
         [self.sectorView setValue:rotaryNameValue forKey:@"image"];
         [self.sectorView setValue:rotaryColorValue forKey:@"tintColor"];
-        self.sectorView.backgroundColor = [UIColor redColor];
         if (i == 0) {
             im.alpha = self.maxAlphavalue;
             if (turnOnColorForCurrent) {
                 [self.sectorView setTintColor:colorForCurrent];}
         }
-        if (self.turnOnDropShadow)
+        if (self.dropShadow)
         {
             self.sectorView = [self turnOnIconDropShadow:self.sectorView];
         }
@@ -230,7 +217,7 @@ HCRotaryWheel *wheel;
     CAShapeLayer *lineLayer = [CAShapeLayer layer];
     //    lineLayer.transform = CATransform3DMakeRotation(0, 20, 20, 20);
     lineLayer.path = [path CGPath];
-    lineLayer.strokeColor = [[UIColor blueColor] CGColor];
+    lineLayer.strokeColor = [[UIColor redColor] CGColor];
     lineLayer.lineWidth = 1.0;
     lineLayer.fillColor = [[UIColor clearColor] CGColor];
     return lineLayer;

@@ -24,8 +24,8 @@ IB_DESIGNABLE
 @property (nonatomic, strong) IBInspectable UIColor* background;
 @property (nonatomic) IBInspectable int numberOfSections;
 @property (nonatomic) IBInspectable float imageSize;
-@property (nonatomic) IBInspectable double minAlphavalue;
-@property (nonatomic) IBInspectable float maxAlphavalue;
+@property (nonatomic) IBInspectable CGFloat minAlphavalue;
+@property (nonatomic) IBInspectable CGFloat maxAlphavalue;
 @property (nonatomic) IBInspectable UIColor *color1;
 @property (nonatomic) IBInspectable UIColor *color2;
 @property (nonatomic) IBInspectable UIColor *color3;
@@ -58,7 +58,14 @@ IB_DESIGNABLE
 @property CGAffineTransform startTransform;
 @property (nonatomic, strong) NSMutableArray *sectors;
 @property int currentSector;
-@property BOOL turnOnDropShadow;
+@property (nonatomic) IBInspectable BOOL dropShadow;
+@property (nonatomic) IBInspectable BOOL circleIcons;
+@property (nonatomic) IBInspectable BOOL squareIcons;
+@property (nonatomic) IBInspectable BOOL sectorLines;
+@property (nonatomic) IBInspectable BOOL outerCircle;
+@property (nonatomic) IBInspectable BOOL innerCircle;
+@property (nonatomic) IBInspectable BOOL sectionColor;
+
 @property (nonatomic) BOOL timerDoesExist;
 @property (nonatomic) BOOL turnOnColorForCurrent;
 @property (nonatomic) UIColor* colorForCurrent;
