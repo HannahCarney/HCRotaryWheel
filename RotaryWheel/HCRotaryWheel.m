@@ -103,21 +103,20 @@ HCRotaryWheel *wheel;
         
         im.tag = i;
 
-        // Set sector image
+        // Set sectors
         float degrees = (360/(int)self.numberOfSections)/2;
         if (degrees >= 90){
             degrees = 60;
         }
-    
         float radiusOfBigCircle = rect.size.width/2;
-        
         [self addOutlineforCircle:radiusOfBigCircle andX:0];
-
         float iconSize = (radiusOfBigCircle * 2/3) + self.imageSize;
         float radiusOfLittleCircle = radiusOfBigCircle - [self getHypotenuse:iconSize];
-        [self addOutlineforCircle:[self getHypotenuse:radiusOfLittleCircle] andX:radiusOfBigCircle - [self getHypotenuse:radiusOfLittleCircle]];
-        [im.layer addSublayer:[self addOutlineforSquare: [self getSideOfTriangle:radiusOfBigCircle - [self getHypotenuse:radiusOfLittleCircle]] andX:radiusOfLittleCircle]];
-        self.sectorView = [[RotaryImageView alloc] initWithFrame: CGRectMake(radiusOfLittleCircle, radiusOfLittleCircle, iconSize, iconSize)];
+        float hypotenuseOfLittleCircle = [self getHypotenuse:radiusOfLittleCircle];
+        [self addOutlineforCircle:hypotenuseOfLittleCircle andX:radiusOfBigCircle - hypotenuseOfLittleCircle];
+        float iconHeight = [self getSideOfTriangle:radiusOfBigCircle - hypotenuseOfLittleCircle];
+        [im.layer addSublayer:[self addOutlineforSquare:iconHeight  andX:radiusOfLittleCircle]];
+        self.sectorView = [[RotaryImageView alloc] initWithFrame: CGRectMake(radiusOfLittleCircle, radiusOfLittleCircle, iconHeight, iconHeight)];
         self.sectorView.transform = CGAffineTransformMakeRotation(-1 * (angleSize*i + .8));
         [im addSubview:self.sectorView];
         [imageArray addObject:self.sectorView];
