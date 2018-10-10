@@ -122,7 +122,11 @@ HCRotaryWheel *wheel;
         [im.layer addSublayer:[self addOutlineforSquare:iconHeight  andX:radiusOfLittleCircle]];
         float hypotenuseOfIcon = [self getHypotenuse:iconHeight];
         //circle icons
-        [[self layer] addSublayer:[self addOutlineforCircle:hypotenuseOfIcon/2 andX: radiusOfLittleCircle andY:radiusOfLittleCircle]];
+        float hypotenuseOfCirlceIcon = [self getHypotenuse:hypotenuseOfIcon];
+              float hypotenuseOfBigCircle = [self getHypotenuse:radiusOfBigCircle];
+        float subtractRadiusFromHypot = (hypotenuseOfCirlceIcon - hypotenuseOfIcon)/4;
+        float x = hypotenuseOfCirlceIcon/2 - hypotenuseOfIcon;
+        [im.layer addSublayer:[self addOutlineforCircle:hypotenuseOfIcon/2 andX: radiusOfLittleCircle - ((hypotenuseOfIcon - iconHeight)/2) andY: radiusOfLittleCircle - ((hypotenuseOfIcon - iconHeight)/2)]];
 
         self.sectorView = [[RotaryImageView alloc] initWithFrame: CGRectMake(radiusOfLittleCircle, radiusOfLittleCircle, iconHeight, iconHeight)];
         self.sectorView.transform = CGAffineTransformMakeRotation(-1 * (angleSize*i + .8));
