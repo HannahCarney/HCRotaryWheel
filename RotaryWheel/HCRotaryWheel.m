@@ -104,26 +104,19 @@ HCRotaryWheel *wheel;
         im.tag = i;
 
         // Set sector image
-        double degrees = (360/(int)self.numberOfSections)/2;
+        float degrees = (360/(int)self.numberOfSections)/2;
         if (degrees >= 90){
             degrees = 60;
         }
     
-        double radiusOfBigCircle = rect.size.width/2;
+        float radiusOfBigCircle = rect.size.width/2;
         
         [self addOutlineforCircle:radiusOfBigCircle andX:0];
 
-        double iconSize = (radiusOfBigCircle * 2/3) + self.imageSize;
-        double radiusOfLittleCircle = radiusOfBigCircle - [self getHypotenuse:iconSize];
-//        degreesOfStarting = degrees/2;
-//        int height = rect.size.height - radiusOfBigCircle * 2;
+        float iconSize = (radiusOfBigCircle * 2/3) + self.imageSize;
+        float radiusOfLittleCircle = radiusOfBigCircle - [self getHypotenuse:iconSize];
         [self addOutlineforCircle:[self getHypotenuse:radiusOfLittleCircle] andX:radiusOfBigCircle - [self getHypotenuse:radiusOfLittleCircle]];
-//        [self addOutlineforSquare:radiusOfLittleCircle andX:(radiusOfBigCircle - radiusOfLittleCircle)/ 2];
-    
-        [im.layer addSublayer: [self addOutlineforSquare:iconSize andX:radiusOfLittleCircle]];
-//        [self.layer addSublayer: [self addOutlineforSquare:iconSize andX:radiusOfLittleCircle]];
-//        im.frame = startingValueOfSectorCircle;
-
+        [im.layer addSublayer:[self addOutlineforSquare: [self getSideOfTriangle:radiusOfBigCircle - [self getHypotenuse:radiusOfLittleCircle]] andX:radiusOfLittleCircle]];
         self.sectorView = [[RotaryImageView alloc] initWithFrame: CGRectMake(radiusOfLittleCircle, radiusOfLittleCircle, iconSize, iconSize)];
         self.sectorView.transform = CGAffineTransformMakeRotation(-1 * (angleSize*i + .8));
         [im addSubview:self.sectorView];
@@ -137,8 +130,7 @@ HCRotaryWheel *wheel;
             rotaryNameValue = [rotaryNameValue imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
         }
         [self.sectorView setValue:rotaryNameValue forKey:@"image"];
-//        [self.sectorView setValue:rotaryColorValue forKey:@"tintColor"];
-         [self.sectorView setValue:rotaryColorValue forKey:@"backgroundColor"];
+        [self.sectorView setValue:rotaryColorValue forKey:@"tintColor"];
         if (i == 0) {
             im.alpha = self.maxAlphavalue;
             if (turnOnColorForCurrent) {
