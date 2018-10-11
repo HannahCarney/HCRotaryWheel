@@ -1,7 +1,7 @@
 # HCRotaryWheel
 A Rotary Wheel for altering content that can be customised in Interface Builder
 
-Currently allows for up to 8 sectors in Interface Builder
+Currently allows for up to 12 sectors in Interface Builder
 
 Feel free to open an issue here for added functionality
 
@@ -16,7 +16,10 @@ Feel free to open an issue here for added functionality
 - Background, number of elements, images and color of images can be changed in the Interface Builder
 - Circular or square icons surrounding the images
 - Drop shadows can be toggled
-- Different section borders can be toggled on or off, background can be customized also:
+- Different section borders can be toggled on or off, background can be customized also
+
+<img src="Images/Oct-11-2018 14-40-33.gif" alt="alt text" width="350">
+
 
 <img src="Images/ScreenShot1.png" alt="alt text" width="250">
 
