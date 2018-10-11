@@ -55,8 +55,6 @@ HCRotaryWheel *wheel;
 -(void)initialSetup
 {
     currentSector = 0;
-//    _background = [UIColor clearColor];
-//    self.backgroundColor = [UIColor clearColor];
     self.layer.contentsScale = [UIScreen mainScreen].scale;
     self.numberOfSections = 6;
 //    self.minAlphavalue = 1.0;
@@ -106,6 +104,7 @@ HCRotaryWheel *wheel;
         
         im.transform = CGAffineTransformMakeRotation(angleSize*i +.8);
         im.alpha = self.minAlphavalue;
+        im.tag = i;
         
         [self addSectorShapes:im :rect :angleSize :i];
         

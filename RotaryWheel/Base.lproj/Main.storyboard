@@ -79,9 +79,6 @@
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="image" keyPath="image7" value="monkey"/>
                                     <userDefinedRuntimeAttribute type="image" keyPath="image8" value="alien"/>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="color1">
-                                        <color key="value" red="0.079354338347911835" green="0.76811593770980835" blue="0.10753554850816727" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
                         </subviews>

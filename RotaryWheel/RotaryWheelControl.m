@@ -18,7 +18,6 @@
 }
 
 static float deltaAngle;
-//static float minAlphavalue = 0.6;
 
 @synthesize startTransform;
 
