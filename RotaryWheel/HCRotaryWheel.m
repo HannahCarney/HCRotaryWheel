@@ -81,8 +81,9 @@ HCRotaryWheel *wheel;
     CGRect myFrame = CGRectMake(rect.origin.x, rect.origin.y, rect.size.width, rect.size.width);
     
     //DrawBackground
-    CGRect bottomRect = CGRectMake(0, rect.size.height/2.0, rect.size.width, rect.size.height/2.0);
+    CGRect bottomRect = rect;
     [self.backgroundColor setFill];
+    [self.backgroundColor setStroke];
     UIRectFill( bottomRect );
 
     

@@ -33,24 +33,25 @@
     NSString *text = @"";
     switch(newValue) {
         case 0:
-            text = @"Bear";
+            text = @"The first image";
             break;
         case 1:
-            text = @"Monkey";
+            text = @"Don't forget to refresh your views in IB builder";
             break;
         case 2:
-            text = @"Dog";
+            text = @"Don't forget to star me on github: hannahcarneyart";
             break;
         case 3:
-            text = @"Ghost";
+            text = @"Woo circles!";
             break;
         case 4:
-            text = @"Peace";
+            text = @"Isn't programming fun?";
             break;
         case 5:
-            text = @"Alien";
+            text = @"Feel free to make a pull request to the repo";
             break;
         default:
+            text = @"Default text!";
             break;
     }
     return text;
