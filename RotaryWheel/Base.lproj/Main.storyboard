@@ -24,7 +24,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7fq-mt-2jT">
-                                <rect key="frame" x="166" y="489" width="42" height="54"/>
+                                <rect key="frame" x="165.5" y="489" width="42" height="54"/>
                                 <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="54" id="8Q1-aa-3mR"/>
@@ -34,17 +34,17 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleAspectFill" translatesAutoresizingMaskIntoConstraints="NO" id="bSG-uF-tro" customClass="HCRotaryWheel">
-                                <rect key="frame" x="54" y="89" width="266" height="375"/>
-                                <color key="backgroundColor" red="0.37646263837814331" green="0.07501230388879776" blue="0.34110254049301147" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <rect key="frame" x="0.0" y="73" width="375" height="391"/>
+                                <color key="backgroundColor" red="0.99607473611831665" green="0.99220293760299683" blue="0.99199241399765015" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <accessibility key="accessibilityConfiguration">
                                     <accessibilityTraits key="traits" link="YES" image="YES" selected="YES" playsSound="YES" keyboardKey="YES" staticText="YES" summaryElement="YES" updatesFrequently="YES" searchField="YES" startsMediaSession="YES" adjustable="YES" allowsDirectInteraction="YES" causesPageTurn="YES" header="YES"/>
                                     <bool key="isElement" value="YES"/>
                                 </accessibility>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="266" id="86J-p8-Qzu"/>
-                                    <constraint firstAttribute="height" constant="375" id="GsO-Ta-88E"/>
-                                    <constraint firstAttribute="width" secondItem="bSG-uF-tro" secondAttribute="height" multiplier="263:271" constant="-97.929889298892988" id="Jjk-y5-PuB"/>
+                                    <constraint firstAttribute="width" constant="375" id="86J-p8-Qzu"/>
+                                    <constraint firstAttribute="height" constant="391" id="GsO-Ta-88E"/>
+                                    <constraint firstAttribute="width" secondItem="bSG-uF-tro" secondAttribute="height" multiplier="263:271" constant="-4.4575645756457334" id="Jjk-y5-PuB"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="image" keyPath="image2" value="monkey"/>
@@ -57,38 +57,41 @@
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="image" keyPath="image1" value="peace"/>
                                     <userDefinedRuntimeAttribute type="number" keyPath="minAlphavalue">
-                                        <real key="value" value="0.20000000000000001"/>
+                                        <real key="value" value="0.5"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="number" keyPath="maxAlphavalue">
                                         <real key="value" value="3"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="color" keyPath="sectionColor">
-                                        <color key="value" red="0.0" green="0.97680455450000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="value" red="0.15193706750869751" green="0.30091249942779541" blue="0.0650826096534729" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="dropShadow" value="YES"/>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="circleIcons" value="NO"/>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="squareIcons" value="NO"/>
-                                    <userDefinedRuntimeAttribute type="boolean" keyPath="sectorLines" value="NO"/>
-                                    <userDefinedRuntimeAttribute type="boolean" keyPath="outerCircle" value="NO"/>
-                                    <userDefinedRuntimeAttribute type="boolean" keyPath="innerCircle" value="NO"/>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="sectorLines" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="outerCircle" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="innerCircle" value="YES"/>
                                     <userDefinedRuntimeAttribute type="number" keyPath="imageSize">
-                                        <real key="value" value="8"/>
+                                        <real key="value" value="-1"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="color" keyPath="background">
                                         <color key="value" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="image" keyPath="image7" value="monkey"/>
                                     <userDefinedRuntimeAttribute type="image" keyPath="image8" value="alien"/>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="color12">
+                                        <color key="value" red="0.19034680724143982" green="0.700797438621521" blue="0.084115661680698395" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.50196081399917603" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="bSG-uF-tro" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="-57" id="4cV-Vc-ior"/>
+                            <constraint firstItem="bSG-uF-tro" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="-65" id="4cV-Vc-ior"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="7fq-mt-2jT" secondAttribute="bottom" constant="124" id="DKM-LG-0am"/>
-                            <constraint firstItem="bSG-uF-tro" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="38" id="OWH-77-wwr"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="bSG-uF-tro" secondAttribute="trailing" constant="39" id="PtM-XV-ww8"/>
-                            <constraint firstItem="7fq-mt-2jT" firstAttribute="centerX" secondItem="bSG-uF-tro" secondAttribute="centerX" id="sax-gb-Ln0"/>
+                            <constraint firstItem="bSG-uF-tro" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-16" id="OWH-77-wwr"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="bSG-uF-tro" secondAttribute="trailing" constant="-16" id="PtM-XV-ww8"/>
+                            <constraint firstItem="7fq-mt-2jT" firstAttribute="centerX" secondItem="bSG-uF-tro" secondAttribute="centerX" constant="-1" id="sax-gb-Ln0"/>
                         </constraints>
                     </view>
                     <connections>

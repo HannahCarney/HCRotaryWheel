@@ -215,7 +215,7 @@ HCRotaryWheel *wheel;
     CAShapeLayer *circleLayer = [CAShapeLayer layer];
     [circleLayer setPath:[[UIBezierPath bezierPathWithOvalInRect:CGRectMake(xValue, yValue, circle * 2, circle * 2)] CGPath]];
     [circleLayer setStrokeColor:[self.sectionColor CGColor]];
-//    [circleLayer setFillColor:[[UIColor clearColor] CGColor]];
+    [circleLayer setFillColor:[self.backgroundSectionColor CGColor]];
     return circleLayer;
 }
 
@@ -223,7 +223,7 @@ HCRotaryWheel *wheel;
     CAShapeLayer *squareLayer = [CAShapeLayer layer];
     [squareLayer setPath:[[UIBezierPath bezierPathWithRect:CGRectMake(starting, starting, width, width)] CGPath]];
     squareLayer.strokeColor = [self.sectionColor CGColor];
-//    squareLayer.fillColor = [[UIColor clearColor] CGColor];
+    squareLayer.fillColor = [self.backgroundSectionColor CGColor];
     return squareLayer;
 }
 
@@ -234,7 +234,7 @@ HCRotaryWheel *wheel;
     CAShapeLayer *lineLayer = [CAShapeLayer layer];
     lineLayer.path = [path CGPath];
     lineLayer.strokeColor = [self.sectionColor CGColor];
-//    lineLayer.fillColor = [[UIColor clearColor] CGColor];
+    lineLayer.fillColor = [self.backgroundSectionColor CGColor];
     return lineLayer;
 }
 
@@ -260,13 +260,9 @@ HCRotaryWheel *wheel;
 -(RotaryImageView *)turnOnIconDropShadow:(RotaryImageView *)imageView
 {
     self.sectorView.layer.shadowColor = [UIColor blackColor].CGColor;
-    self.sectorView.backgroundColor = [UIColor whiteColor];
-//    self.sectorView.layer.masksToBounds = true;
-    self.sectorView.layer.cornerRadius = imageView.layer.bounds.size.width/2;
-    self.sectorView.clipsToBounds = TRUE;
-    self.sectorView.layer.shadowOpacity = 0.3;
-    self.sectorView.layer.shadowRadius = 1;
-    self.sectorView.layer.shadowOffset = CGSizeMake(0.0f, 2.0f);
+    self.sectorView.layer.shadowOpacity = 1;
+    self.sectorView.layer.shadowRadius = 20;
+    self.sectorView.layer.shadowOffset = CGSizeMake(10.0f, 10.0f);
     return self.sectorView;
     
 }
