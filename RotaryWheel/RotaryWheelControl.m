@@ -99,8 +99,9 @@ static float deltaAngle;
     float ang = atan2(dy,dx);
     if (touchPoint.x - touchPoint2.x < 10 && touchPoint.y - touchPoint2.y < 10 && touchPoint.y - touchPoint2.y > -10)
     {
-        [UIView animateWithDuration:0.6 delay:0 options:UIViewAnimationOptionCurveEaseInOut animations:^{
+        [UIView animateWithDuration:0.1 delay:0 options:UIViewAnimationOptionCurveEaseInOut animations:^{
             UIImageView *im = [self getSectorByValue:wheel.currentSector];
+
             im.alpha =  wheel.minAlphavalue;
             CGAffineTransform t = CGAffineTransformRotate(wheel.container.transform, 1.047 - ang + .683);
             wheel.container.transform = t;
@@ -111,7 +112,7 @@ static float deltaAngle;
         }completion:nil];
         
     }
-    [self performSelectorOnMainThread:@selector(stopTimer) withObject:nil waitUntilDone:YES];
+    [self performSelectorOnMainThread:@selector(stopTimer) withObject:nil waitUntilDone:NO];
     [wheel getPlacement];
 }
 

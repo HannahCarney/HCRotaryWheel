@@ -23,7 +23,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7fq-mt-2jT">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7fq-mt-2jT">
                                 <rect key="frame" x="16" y="472" width="341" height="175"/>
                                 <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -47,10 +47,9 @@
                                     <userDefinedRuntimeAttribute type="image" keyPath="image2" value="monkey"/>
                                     <userDefinedRuntimeAttribute type="image" keyPath="image3" value="dog"/>
                                     <userDefinedRuntimeAttribute type="image" keyPath="image4" value="alien"/>
-                                    <userDefinedRuntimeAttribute type="image" keyPath="image5" value="peace"/>
-                                    <userDefinedRuntimeAttribute type="image" keyPath="image6" value="dog"/>
+                                    <userDefinedRuntimeAttribute type="image" keyPath="image5" value="Ghost"/>
                                     <userDefinedRuntimeAttribute type="number" keyPath="numberOfSections">
-                                        <integer key="value" value="7"/>
+                                        <integer key="value" value="6"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="image" keyPath="image1" value="peace"/>
                                     <userDefinedRuntimeAttribute type="number" keyPath="minAlphavalue">
@@ -82,6 +81,7 @@
                                     <userDefinedRuntimeAttribute type="color" keyPath="backgroundSectionColor">
                                         <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="image" keyPath="image6" value="bear"/>
                                 </userDefinedRuntimeAttributes>
                             </view>
                         </subviews>
@@ -108,7 +108,9 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Ghost" width="269" height="247"/>
         <image name="alien" width="220" height="230"/>
+        <image name="bear" width="220" height="230"/>
         <image name="dog" width="360" height="360"/>
         <image name="monkey" width="620" height="648"/>
         <image name="peace" width="160" height="160"/>
