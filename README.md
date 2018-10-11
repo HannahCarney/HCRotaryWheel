@@ -13,7 +13,7 @@ Feel free to open an issue here for added functionality
 - Rotates on a Timer until Wheel is touched
 - Timer shuts off and then can be dragged or touched to spin the wheel
 - Functionality for changing any content when wheel turns
-- Background, number of elements, images and color of images can be changed in the Interface Builder
+- Background, number of elements, size, images and color of images can be changed in the Interface Builder
 - Circular or square icons surrounding the images
 - Drop shadows can be toggled
 - Different section borders can be toggled on or off, background can be customized also
