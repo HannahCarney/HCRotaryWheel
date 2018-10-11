@@ -3,7 +3,7 @@ A Rotary Wheel for altering content that can be customised in Interface Builder
 
 Currently allows for up to 8 sectors in Interface Builder
 
-Contact me at hannahcarneyart@gmail.com if you want any more added functionality
+Feel free to open an issue here for added functionality
 
 [![Demo CountPages alpha](https://j.gifs.com/v1eBnx.gif)](https://www.youtube.com/watch?v=pKzez4-whqY&feature=youtu.be)
 
@@ -16,9 +16,9 @@ Contact me at hannahcarneyart@gmail.com if you want any more added functionality
 - Background, number of elements, images and color of images can be changed in the Interface Builder
 - Circular or square icons surrounding the images
 - Drop shadows can be toggled
-- Different section borders can be toggled on or off, background can be customized also
+- Different section borders can be toggled on or off, background can be customized also:
 
-![Screenshot](Images/ScreenShot1.png)
+<img src="Images/ScreenShot1.png" alt="alt text" width="250">
 
 ## Pod Installation
 
