@@ -119,7 +119,7 @@ static float deltaAngle;
     UIImageView *res;
     NSArray *views = [wheel.container subviews];
     for (UIImageView *im in views) {
-        if (im.tag == value)
+        if (im.tag == value + 1)
             res = im;
     }
     return res;

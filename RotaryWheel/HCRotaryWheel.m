@@ -104,14 +104,14 @@ HCRotaryWheel *wheel;
         
         im.transform = CGAffineTransformMakeRotation(angleSize*i +.8);
         im.alpha = self.minAlphavalue;
-        im.tag = i;
+        im.tag = i + 1;
         
         [self addSectorShapes:im :rect :angleSize :i];
         
         [imageArray addObject:self.sectorView];
         NSString *rotaryName = [NSString stringWithFormat:@"image%d", i + 1];
         NSString *rotaryColor = [NSString stringWithFormat:@"color%d",i + 1];
-        self.sectorView.tag = i;
+        self.sectorView.tag = i + 1;
         id rotaryNameValue = [self valueForKey:rotaryName];
         id rotaryColorValue = [self valueForKey:rotaryColor];
         if (rotaryColorValue != nil) {
@@ -395,7 +395,7 @@ HCRotaryWheel *wheel;
     UIImageView *res;
     NSArray *views = [container subviews];
     for (UIImageView *im in views) {
-        if (im.tag == value)
+        if (im.tag == value + 1)
             res = im;
     }
     return res;
